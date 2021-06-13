@@ -1,0 +1,172 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['tiny-slider/dist/tiny-slider.css']
+  - var vendorScripts = ['tiny-slider/dist/min/tiny-slider.js', 'imagesloaded/imagesloaded.pkgd.min.js', 'shufflejs/dist/shuffle.min.js', 'parallax-js/dist/parallax.min.js']
+  - var parentMenu = 'Health'
+  - var pageTitle = '健康相談会'
+
+
+//- Navbar + Contact modal
+block navbar
+
+  // Navbar (Solid background + shadow)
+  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
+    .navbar-search.bg-light
+      .container.d-flex.flex-nowrap.align-items-center
+        i.ai-search.fs-xl
+        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
+        .d-flex.align-items-center
+          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
+          button(type='button' data-bs-toggle='search').btn-close.p-2
+    .container.px-0.px-xl-3
+      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
+        span.navbar-toggler-icon
+      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
+        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
+        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
+      .d-flex.align-items-center.order-lg-3.ms-lg-auto
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none お知らせ
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block お知らせ
+      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
+        .offcanvas-header.navbar-shadow
+          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
+          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
+        .offcanvas-body
+          //- partial/menu-primary
+          include partials/menu-primary
+        .offcanvas-footer
+          a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.d-block.w-100.btn-primary お知らせ
+
+
+//- Page Content
+block content
+
+  // Hero
+  section.container.mb-3.my-md-0.py-5.py-md-6
+    .row.align-items-center
+      .col-lg-4.col-md-5.order-md-1.order-2.text-md-start.text-center
+        h1.display-4.mb-lg-4.mb-3 健康相談会
+        h2.h3.mb-lg-5.mb-4.text-muted なんとかしたほうが良いかなあと思うこともあるけれど
+      .col-lg-8.col-md-7.order-md-2.order-1.mb-md-0.mb-grid-gutter
+        lottie-player(src='https://assets3.lottiefiles.com/private_files/lf30_KTzaOr.json'  background='transparent'  speed='0.3' loop autoplay).w-100.h-100
+
+
+  // Services
+  section.bg-faded-primary.position-relative.py-md-7.py-5
+    .container.my-2.my-md-0
+      .row.align-items-center
+        .col-md-5.mb-md-0.mb-5.pb-md-0.pb-3
+          img(src='img/demo/personal-portfolio/services/illustration.svg' alt='Illustration').d-block.mx-md-0.mx-auto
+        .col-lg-6.offset-lg-1.col-md-7.text-md-start.text-center
+          div(style='max-width: 500px;').mx-md-0.mx-auto
+            h2.mb-md-5.mb-4 健康相談会
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block.mb-4.pb-2
+              p.h1.me-md-4.mb-md-0.mb-4 1.
+              .ps-md-2
+                h3.h6.mb-2 ホメオパシーについて正しく理解する
+                p.mb-0.fs-sm ホメオパシー療法の入門的な内容をご理解ください。DVDを観る、入門書を読む、講演会に参加する、ホメオパシーセミナー受講などでホメオパシー療法を理解してください。
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block.mb-4.pb-2
+              p.h1.me-md-4.mb-md-0.mb-4 2.
+              .ps-md-2
+                h3.h6.mb-2 予約を取る
+                p.mb-0.fs-sm
+                  a(href='https://ws.formzu.net/fgen/S5174404/') お問い合わせフォーム
+                  | からご連絡ください。ご予約いただける日時は
+                  a(href='https://ameblo.jp/essence-yumi/' target='_blank') ブログ
+                  | ご覧ください。
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block.mb-4.pb-2
+              p.h1.me-md-4.mb-md-0.mb-4 3.
+              .ps-md-2
+                h3.h6.mb-2 質問票と同意書に記入
+                p.mb-0.fs-sm 書類を郵送します。ご記入してご返送ください。書類は、7枚の質問票と1枚の同意書です。
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block.mb-4.pb-2
+              p.h1.me-md-4.mb-md-0.mb-4 4.
+              .ps-md-2
+                h3.h6.mb-2 振込手続き
+                p.mb-0.fs-sm 当センターの口座をご案内しますので相談料のお振込をお願いします。おそれいりますが振込手数料はご負担いただいております。
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block.mb-4.pb-2
+              p.h1.me-md-4.mb-md-0.mb-4 5.
+              .ps-md-2
+                h3.h6.mb-2 健康相談会
+                p.mb-0.fs-sm ご相談に応じてオリジナルレメディーやフラワーエッセンス、自然療法などを紹介します。 ホメオパシーならレメディー適用書を発行しますので、販売店でレメディーをご注文、ご購入ください。お支払い方法は、販売店によって異なりますのでご確認お願いします。
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block
+              p.h1.me-md-4.mb-md-0.mb-4 6.
+              .ps-md-2
+                h3.h6.mb-2 レメディーの継続利用
+                p.mb-0.fs-sm 約90日、レメディーを継続利用してください。その後、相談会(オフライン・オンライン)へお申し込みください。
+
+    .shape.shape-top.shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 3000 185.4')
+        path(fill='currentColor', d='M3000,185.4V0H0v185.4C496.4,69.8,996.4,12,1500,12S2503.6,69.8,3000,185.4z')
+
+
+  // Solutions
+  section.container.position-relative.zindex-5.pt-5.pt-md-6.pt-lg-7
+    h2.text-center.pt-3.pt-md-0.mb-5 フラワーエッセンスと自然療法
+    .row
+      .col-sm-6.mb-grid-gutter
+        .bg-light.shadow.rounded-3.py-5.px-4
+          .d-block.d-xl-flex.align-items-center.px-lg-3.py-xl-2.text-center.text-sm-start
+            img(src='img/user/illustration/pixeltrue-giveaway-1.svg' alt='' width='140').d-inline-block.mb-3.mb-xl-0
+            .ps-xl-3.ms-xl-3
+              h3.h4.text-primary.pb-1 フラワーエッセンス
+              p 目に見えない領域のバランスの乱れこそ本当に治療すべきもの
+              a(href='#').nav-link-style
+                | Read more
+                i.ai-chevron-right.fs-xl.ms-1.align-middle
+      .col-sm-6.mb-grid-gutter
+        .bg-light.shadow.rounded-3.py-5.px-4
+          .d-block.d-xl-flex.align-items-center.px-lg-3.py-xl-2.text-center.text-sm-start
+            img(src='img/demo/personal-portfolio/portfolio/04.jpg' alt='' width='140').d-inline-block.mb-3.mb-xl-0
+            .ps-xl-3.ms-xl-3
+              h3.h4.text-primary.pb-1 自然療法
+              p 体質分類がありそれぞれの体質に応じた養生がある
+              a(href='#').nav-link-style
+                | Read more
+                i.ai-chevron-right.fs-xl.ms-1.align-middle
+
+
+  // Socials
+  section(style='background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);').position-relative.py-6.bg-no-repeat.bg-position-center-bottom.overflow-hidden
+
+    // Parallax
+    .parallax
+      .parallax-layer(data-depth='0.1')
+        img(src='img/demo/personal-portfolio/socials/figure-1.png' alt='Layer 1')
+      .parallax-layer(data-depth='0.15')
+        img(src='img/demo/personal-portfolio/socials/figure-2.png' alt='Layer 2')
+      .parallax-layer(data-depth='0.25')
+        img(src='img/demo/personal-portfolio/socials/figure-3.png' alt='Layer 3')
+
+    // Content
+    div(style='top: 0; left: 0; z-index: 9').d-flex.align-items-center.position-absolute.w-100.h-100
+      .container
+        h2.mb-4.pb-sm-3.text-center Follow me
+        .text-center
+          a(href='https://www.instagram.com/wildflowers_yumi/' style='background-color: #ea4c89;').btn.btn-lg.text-white.mb-2.me-sm-4.me-2
+            i.ai-instagram.lead.me-2
+            | Instagram
+
+
+//- Footer
+block footer
+
+  // Footer
+  footer.footer.pb-4.mt-sm-n5
+    .container.fs-sm.text-center
+      span.text-muted © All rights reserved. 日本ホメオパシーセンター奈良 学園前

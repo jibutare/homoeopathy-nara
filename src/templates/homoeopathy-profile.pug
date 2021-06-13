@@ -1,0 +1,159 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['tiny-slider/dist/tiny-slider.css']
+  - var vendorScripts = ['tiny-slider/dist/min/tiny-slider.js', 'imagesloaded/imagesloaded.pkgd.min.js', 'shufflejs/dist/shuffle.min.js', 'parallax-js/dist/parallax.min.js']
+  - var parentMenu = 'Profile'
+  - var pageTitle = 'ホメオパスプロフィル'
+
+
+//- Navbar + Contact modal
+block navbar
+
+  // Navbar (Solid background + shadow)
+  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
+    .navbar-search.bg-light
+      .container.d-flex.flex-nowrap.align-items-center
+        i.ai-search.fs-xl
+        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
+        .d-flex.align-items-center
+          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
+          button(type='button' data-bs-toggle='search').btn-close.p-2
+    .container.px-0.px-xl-3
+      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
+        span.navbar-toggler-icon
+      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
+        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
+        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
+      .d-flex.align-items-center.order-lg-3.ms-lg-auto
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none お知らせ
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block お知らせ
+      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
+        .offcanvas-header.navbar-shadow
+          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
+          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
+        .offcanvas-body
+          //- partial/menu-primary
+          include partials/menu-primary
+        .offcanvas-footer
+          a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.d-block.w-100.btn-primary お知らせ
+
+
+//- Page Content
+block content
+
+  // Hero
+  section.container.mb-3.my-md-0.py-5.py-md-6
+    .row.align-items-center
+      .col-lg-5.col-md-5.order-md-1.order-2.text-md-start.text-center
+        h1.display-4.mb-lg-4.mb-3 ホメオパスプロフィル
+        h2.h3.mb-lg-5.mb-4.text-muted 淺田ゆみ
+      .col-lg-7.col-md-7.order-md-2.order-1.mb-md-0.mb-grid-gutter
+        lottie-player(src='https://assets10.lottiefiles.com/packages/lf20_dy2leguq.json'  background='transparent'  speed='0.8' loop autoplay).w-100.h-100
+
+
+  // Services
+  section.bg-faded-primary.position-relative.py-md-7.py-5
+    .container.my-2.my-md-0
+      .row.align-items-center
+        .col-12.col-md-8.mx-auto.mb-md-0.mb-5.pb-md-0.pb-3
+          // Horizontal card layout
+          .card.card-horizontal
+            .card-img-top(style="background-image: url(img/user/homeopathy/DSC_0132.jpg);")
+            .card-body
+              h5.card-title
+                | 淺田ゆみ
+              ul.card-text.fs-sm.my-5
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-success.fs-xl.mt-1.me-3
+                  span JPHMA認定ホメオパス No.0910
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-success.fs-xl.mt-1.me-3
+                  span JPHFインナーチャイルドセラピスト認定 No.118
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-success.fs-xl.mt-1.me-3
+                  span JPHMA認定ホメオパス, JPHFインナーチャイルドセラピスト, 正看護師, 養護教諭一種免許状(保健室の先生)
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-success.fs-xl.mt-1.me-3
+                  span フラワーエッセンス研究家の東昭史氏のもとで勉強中
+
+              a(href="https://ameblo.jp/essence-yumi/" target='blank').btn.btn-sm.btn-primary
+                i.ai-edit-2.mt-n1.me-2 ブログ
+
+
+
+    .shape.shape-top.shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 3000 185.4')
+        path(fill='currentColor', d='M3000,185.4V0H0v185.4C496.4,69.8,996.4,12,1500,12S2503.6,69.8,3000,185.4z')
+
+  // About
+  section.overflow-hidden
+    .container.py-lg-7.py-md-6.py-5.my-2.my-md-0
+      h2.mb-3.text-center あの頃の私を助けてあげたい
+      .row.justify-content-center
+        // Content
+        .col-lg-6.py-4.mb-2.mb-sm-0.pb-sm-5
+          .pb-4(style='max-width: 38rem;')
+            p 目には見えないけれど、
+              br
+              | あなたの内にある生命力は、本来はイキイキと流れています。
+              br
+              | 生命エネルギーの流れが滞ると元気がなくなり、病気になります。
+              br
+              | じゃあどうしたらいいのでしょうか？
+              br
+              | 自然の力を借りて、バランスを取り戻してみませんか？
+            blockquote.blockquote.mx-5.my-5
+              | ホメオパシー と フラワーエッセンスで
+            p 毎日の暮らしを、あなたらしく生きるお手伝いをします。
+
+  // Testimonials
+  section.bg-faded-primary.position-relative.py-md-7.py-5
+    .container
+      .row
+        .col-lg-6.col-md-7.mx-auto
+          p こんにちは。ホメオパスの淺田ゆみ（あさだ ゆみ）です。
+            br
+            | 体や心のことで、お困りのことはありませんか。
+          p 私がなぜホメオパスになったのかと言いますと…
+          p 私は28歳の時にうつになりました。何の疑問も持たずに西洋医学の病院に通って、薬を飲んでいました。でも元気になりませんでした。
+            br
+            | (ちなみに私のうつは次のような症状でした。眠れない、食欲がない、体がだるくしんどい。駅の階段もしんどい。喜びと興味がなくなった。いつも気持ちが重くて悲しい。死にたくなる。朝、目が覚めた瞬間から悲しみに覆われている。生理のたびに動けなくなり寝込む。普通の日常生活ができず辛い。このような状態でも仕事をしていたので、どんどんエネルギーが枯渇し、疲れ果てていく一方でした。)
+          p 私が苦しんでいるのを知った叔母が、ホメオパシーを教えてくれました。これが私とホメオパシーとの出会いです。藁をもすがる思いですぐにホメオパスさんの元を訪ね、半信半疑でレメディーを摂り始めてから、好転反応の皮膚湿疹が出たのが3日後。驚きました。それから少しずつ薬が減ってゆき、断薬もできました。
+          p 実はホメオパスになる以前の職業は養護教諭でした。幼稚園や小学校の保健室で学校保健の仕事に携わり19年間勤務した経験があります。うつをきっかけとしてホメオパシーに出会い、価値観が変わり、生き方が変わり、私を取り巻く世界が大きく変わりました。苦しい好転反応を乗り越えながら「自分を知る」歩みを続けているうちに、以前の私とは見違えるような私になりました。苦しかった経験も含めて、今ではまるごと愛おしく感謝の気持ちで自分の人生を眺めています。
+          p 私は今、毎日を豊かに味わっています。こんなに喜びや幸せを感じられるなんて思ってもみませんでした。自分を取り戻させてくれた「ホメオパシー」と「フラワーエッセンス」が大好きです。だからこの療法を、必要としている人へ届けたい。ホリスティックなケアは様々な方法がありますから、「ホメオパシー」と「フラワーエッセンス」があなたの選択肢の一つになったらいいなあと思っています。生きづらさも、病気も、感情に振り回される時も、答えはあなたの中にあります。私は、あなたが、あなたらしく生きるためのお手伝いをします。
+    .shape.shape-bottom.shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3000 185.4')
+        path(fill='currentColor' d='M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z')
+
+  // Socials
+  section(style='background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);').position-relative.py-6.bg-no-repeat.bg-position-center-bottom.overflow-hidden
+
+    // Parallax
+    .parallax
+      .parallax-layer(data-depth='0.1')
+        img(src='img/demo/personal-portfolio/socials/figure-1.png' alt='Layer 1')
+      .parallax-layer(data-depth='0.15')
+        img(src='img/demo/personal-portfolio/socials/figure-2.png' alt='Layer 2')
+      .parallax-layer(data-depth='0.25')
+        img(src='img/demo/personal-portfolio/socials/figure-3.png' alt='Layer 3')
+
+    // Content
+    div(style='top: 0; left: 0; z-index: 9').d-flex.align-items-center.position-absolute.w-100.h-100
+      .container
+        h2.mb-4.pb-sm-3.text-center Follow me
+        .text-center
+          a(href='https://www.instagram.com/wildflowers_yumi/' style='background-color: #ea4c89;').btn.btn-lg.text-white.mb-2.me-sm-4.me-2
+            i.ai-instagram.lead.me-2
+            | Instagram
+
+
+//- Footer
+block footer
+
+  // Footer
+  footer.footer.pb-4.mt-sm-n5
+    .container.fs-sm.text-center
+      span.text-muted © All rights reserved. 日本ホメオパシーセンター奈良 学園前

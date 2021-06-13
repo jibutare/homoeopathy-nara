@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>淺田ゆみ | ホメオパシーとは?</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Around - Multipurpose Bootstrap Template">
+    <meta name="keywords" content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+      
+    </script>
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <main class="page-wrapper">
+      <!-- Navbar (Solid background + shadow)-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
+        <div class="navbar-search bg-light">
+          <div class="container d-flex flex-nowrap align-items-center"><i class="ai-search fs-xl"></i>
+            <input class="form-control form-control-xl navbar-search-field" type="text" placeholder="Search site">
+            <div class="d-flex align-items-center"><span class="text-muted fs-xs mt-1 d-none d-sm-inline">Close</span>
+              <button class="btn-close p-2" type="button" data-bs-toggle="search"></button>
+            </div>
+          </div>
+        </div>
+        <div class="container px-0 px-xl-3">
+          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html"><img class="d-none d-lg-block" src="img/logo/logo-dark.png" alt="hinoka" width="153"><img class="d-lg-none" src="img/logo/logo-icon.png" alt="hinoka" width="58"></a>
+          <div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="https://ameblo.jp/essence-yumi/" target="_blank">お知らせ</a><a class="btn btn-sm btn-primary d-lg-none d-inline-block" href="https://ameblo.jp/essence-yumi/" target="_blank">お知らせ</a></div>
+          <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="offcanvas-header navbar-shadow">
+              <h6 class="mt-1 mb-0"><small>日本ホメオパシーセンター奈良 学園前</small></h6>
+              <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Menu-->
+              <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="/homoeopathy.html">ホメオパシー</a></li>
+                <li class="nav-item"><a class="nav-link" href="/talk-about-your-health.html">健康相談会</a></li>
+                <li class="nav-item"><a class="nav-link" href="/time-fee.html">相談料</a></li>
+                <li class="nav-item"><a class="nav-link" href="/homoeopathy-profile.html">ホメオパスプロフィル</a></li>
+                <li class="nav-item"><a class="nav-link" href="/open.html">アクセス</a></li>
+              </ul>
+            </div>
+            <div class="offcanvas-footer"><a class="btn d-block w-100 btn-primary" href="https://ameblo.jp/essence-yumi/" target="_blank">お知らせ</a></div>
+          </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Hero-->
+      <section class="container mb-3 my-md-0">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-md-5 order-md-1 order-2 text-md-start text-center">
+            <h1 class="display-4 mb-lg-4 mb-3">ホメオパシー</h1>
+            <h2 class="h3 mb-lg-5 mb-4 text-muted">似たようなものが、似たようなものを癒す</h2>
+          </div>
+          <div class="col-lg-8 col-md-7 order-md-2 order-1 mb-md-0 mb-grid-gutter">
+            <lottie-player class="w-100 h-100" src="https://assets4.lottiefiles.com/packages/lf20_0xllbqad.json" background="transparent" speed="1" loop autoplay></lottie-player>
+          </div>
+        </div>
+      </section>
+      <!-- About-->
+      <!-- Horizontal card layout-->
+      <section class="container">
+        <div class="card card-horizontal">
+          <div class="card-img-top" style="background-image: url('img/user/homeopathy/DSC_0233.jpg');"></div>
+          <div class="card-body">
+            <h2 class="card-title">ホメオパシー</h2>
+            <p class="card-text fs-sm">ホメオパシー Homoeopathy は「似たようなものが、似たようなものを癒す」という同種の法則に基づいています。古代ギリシャから同種療法はありましたし、日本にも世界各地に同種療法のお手当があります。この、同種療法を確立したのが、ドイツ人医師サミュエル・ハーネマン(1755-1843)です。</p><a class="btn btn-sm btn-primary" href="https://ameblo.jp/essence-yumi/entry-12374976434.html" target="_blank">ホメオパシーが向かないかもしれない場合</a>
+          </div>
+        </div>
+      </section>
+      <!-- Solutions-->
+      <section class="container position-relative zindex-5 pt-5 pt-md-6 pt-lg-7">
+        <h2 class="text-center pt-3 pt-md-0 mb-5">フラワーエッセンスと自然療法</h2>
+        <div class="row">
+          <div class="col-sm-6 mb-grid-gutter">
+            <div class="bg-light shadow rounded-3 py-5 px-4">
+              <div class="d-block d-xl-flex align-items-center px-lg-3 py-xl-2 text-center text-sm-start"><img class="d-inline-block mb-3 mb-xl-0" src="img/user/illustration/pixeltrue-giveaway-1.svg" alt="" width="140">
+                <div class="ps-xl-3 ms-xl-3">
+                  <h3 class="h4 text-primary pb-1">フラワーエッセンス</h3>
+                  <p>目に見えない領域のバランスの乱れこそ本当に治療すべきもの</p><a class="nav-link-style" href="#">Read more<i class="ai-chevron-right fs-xl ms-1 align-middle"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-grid-gutter">
+            <div class="bg-light shadow rounded-3 py-5 px-4">
+              <div class="d-block d-xl-flex align-items-center px-lg-3 py-xl-2 text-center text-sm-start"><img class="d-inline-block mb-3 mb-xl-0" src="img/demo/personal-portfolio/portfolio/04.jpg" alt="" width="140">
+                <div class="ps-xl-3 ms-xl-3">
+                  <h3 class="h4 text-primary pb-1">自然療法</h3>
+                  <p>体質分類がありそれぞれの体質に応じた養生がある</p><a class="nav-link-style" href="#">Read more<i class="ai-chevron-right fs-xl ms-1 align-middle"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Socials-->
+      <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);">
+        <!-- Parallax-->
+        <div class="parallax">
+          <div class="parallax-layer" data-depth="0.1"><img src="img/demo/personal-portfolio/socials/figure-1.png" alt="Layer 1"></div>
+          <div class="parallax-layer" data-depth="0.15"><img src="img/demo/personal-portfolio/socials/figure-2.png" alt="Layer 2"></div>
+          <div class="parallax-layer" data-depth="0.25"><img src="img/demo/personal-portfolio/socials/figure-3.png" alt="Layer 3"></div>
+        </div>
+        <!-- Content-->
+        <div class="d-flex align-items-center position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 9">
+          <div class="container">
+            <h2 class="mb-4 pb-sm-3 text-center">Follow me</h2>
+            <div class="text-center"><a class="btn btn-lg text-white mb-2 me-sm-4 me-2" href="https://www.instagram.com/wildflowers_yumi/" style="background-color: #ea4c89;"><i class="ai-instagram lead me-2"></i>Instagram</a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer-->
+    <footer class="footer pb-4 mt-sm-n5">
+      <div class="container fs-sm text-center"><span class="text-muted">© All rights reserved. 日本ホメオパシーセンター奈良 学園前</span></div>
+    </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll data-fixed-element><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ai-arrow-up"></i></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="vendor/parallax-js/dist/parallax.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </body>
+</html>

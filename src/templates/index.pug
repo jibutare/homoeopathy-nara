@@ -1,0 +1,214 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var vendorStyles = ['tiny-slider/dist/tiny-slider.css']
+  - var vendorScripts = ['tiny-slider/dist/min/tiny-slider.js', 'imagesloaded/imagesloaded.pkgd.min.js', 'shufflejs/dist/shuffle.min.js', 'parallax-js/dist/parallax.min.js']
+  - var parentMenu = 'Home'
+  - var pageTitle = '日本ホメオパシーセンター奈良 学園前'
+
+
+//- Navbar + Contact modal
+block navbar
+
+  // Navbar (Solid background + shadow)
+  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
+    .navbar-search.bg-light
+      .container.d-flex.flex-nowrap.align-items-center
+        i.ai-search.fs-xl
+        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
+        .d-flex.align-items-center
+          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
+          button(type='button' data-bs-toggle='search').btn-close.p-2
+    .container.px-0.px-xl-3
+      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
+        span.navbar-toggler-icon
+      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
+        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
+        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
+      .d-flex.align-items-center.order-lg-3.ms-lg-auto
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none お知らせ
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block お知らせ
+      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
+        .offcanvas-header.navbar-shadow
+          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
+          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
+        .offcanvas-body
+          //- partial/menu-primary
+          include partials/menu-primary
+        .offcanvas-footer
+          a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.d-block.w-100.btn-primary お知らせ
+
+
+//- Page Content
+block content
+
+  // Hero
+  section.container.mb-3.my-md-0.py-5.py-md-6
+    .row.align-items-center
+      .col-lg-4.col-md-5.order-md-1.order-2.text-md-start.text-center
+        h1.display-4.mb-lg-4.mb-3 内なる声に耳を澄まして、私を生きる。
+        h2.mb-lg-5.mb-4.text-muted 日々の暮らしに自然の恵みをとりいれてみませんか
+        .text-nowrap
+          a(href='/homoeopathy.html').btn.btn-translucent-primary.me-3
+            i.ai-book.mt-n1.me-2
+            | ホメオパシー
+          a(href='/homoeopathy-profile.html' data-scroll).btn.btn-outline-primary プロフィール
+      .col-lg-8.col-md-7.order-md-2.order-1.mb-md-0.mb-grid-gutter
+        img(src='img/demo/personal-portfolio/hero-illustration.svg' alt='Illustration')
+
+
+  // Services
+  section.bg-faded-primary.position-relative.py-md-7.py-5
+    .container.my-2.my-md-0
+      .row.align-items-center
+        .col-md-5.mb-md-0.mb-5.pb-md-0.pb-3
+          img(src='img/demo/personal-portfolio/services/illustration.svg' alt='Illustration').d-block.mx-md-0.mx-auto
+        .col-lg-6.offset-lg-1.col-md-7.text-md-start.text-center
+          div(style='max-width: 500px;').mx-md-0.mx-auto
+            h2.mb-md-5.mb-4 サポートできること
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block.mb-4.pb-2
+              img(src='img/user/icon/icons8-talk-64.png' alt='Icon' width='32').me-md-4.mb-md-0.mb-4
+              .ps-md-2
+                h3.h6.mb-2 健康相談会
+                p.mb-0.fs-sm 心や体のお困りごとをご相談いただき、あなたの状態に合った自然療法やフラワーエッセンス、レメディーを紹介します。
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block.mb-4.pb-2
+              img(src='img/user/icon/icons8-herbal-medicine-64.png' alt='Icon' width='32').me-md-4.mb-md-0.mb-4
+              .ps-md-2
+                h3.h6.mb-2 ホメオパシー
+                p.mb-0.fs-sm ホメオパスの役割は気づきを助けることです。病気が治るかどうかはそれぞれの人の内に答えがあります。
+
+            // Media item (Service)
+            .d-md-flex.align-items-start.d-block
+              img(src='img/user/icon/icons8-bottle-64.png' alt='Icon' width='32').me-md-4.mb-md-0.mb-4
+              .ps-md-2
+                h3.h6.mb-2 フラワーエッセンス
+                p.mb-0.fs-sm 「気分や感情」を指標にして花の治療薬を選びます。
+
+    .shape.shape-top.shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 3000 185.4')
+        path(fill='currentColor', d='M3000,185.4V0H0v185.4C496.4,69.8,996.4,12,1500,12S2503.6,69.8,3000,185.4z')
+
+
+  // Portfolio
+  section#portfolio.overflow-hidden
+    .container.py-lg-7.py-md-6.py-5.my-2.my-md-0
+      h2.mb-3.text-center ご相談ください
+      p.mb-4.pb-md-2.text-muted.text-center どれに興味がありますか?
+
+      .masonry-filterable
+
+        // Portfolio nav (Filters)
+        nav(data-simplebar data-simplebar-auto-hide='false').pb-3.mb-4
+          ul.masonry-filters.nav.nav-tabs.justify-content-sm-center.flex-nowrap.text-nowrap.mb-0
+            li.nav-item
+              a(href='#' class='nav-link active' data-group='all') すべて
+            li.nav-item
+              a(href='#' class='nav-link' data-group='healthcare') 健康相談会
+            li.nav-item
+              a(href='#' class='nav-link' data-group='homeopathy') ホメオパシー
+            li.nav-item
+              a(href='#' class='nav-link' data-group='flower') フラワーエッセンス
+
+        // Portfolio grid
+        .masonry-grid(data-columns='3')
+
+          // Portfolio item
+          article.masonry-grid-item(data-groups='["healthcare"]')
+            a(href='/talk-about-your-health.html').card.card-hover.h-100.border-0.shadow
+              img(src='img/user/illustration/pixeltrue-time-management-1.svg' alt='Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 病院へいくほどでもないけれど不調を感じる
+                span.fs-sm.text-muted 健康相談会
+
+          // Portfolio item
+          article.masonry-grid-item(data-groups='["homeopathy"]')
+            a(href='/homoeopathy.html').card.card-hover.h-100.border-0.shadow
+              img(src='img/user/illustration/pixeltrue-business-meeting-1.svg' alt='Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 病気が治るだけなら本質的なことを見失う
+                span.fs-sm.text-muted ホメオパシー
+
+          // Portfolio item
+          article.masonry-grid-item(data-groups='["flower"]')
+            a(href='#').card.card-hover.h-100.border-0.shadow
+              img(src='img/user/illustration/pixeltrue-giveaway-1.svg' alt='Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 目に見えない領域のバランスの乱れこそ本当に治療すべきもの
+                span.fs-sm.text-muted フラワーエッセンス
+
+          // Portfolio item
+          article.masonry-grid-item(data-groups='["all"]')
+            a(href='#').card.card-hover.h-100.border-0.shadow
+              img(src='img/demo/personal-portfolio/portfolio/04.jpg' alt='Article image').card-img-top
+              .card-body.text-center
+                h3.h5.mb-1 体質分類がありそれぞれの体質に応じた養生がある
+                span.fs-sm.text-muted 自然療法
+
+      .pt-3.text-center
+        a(href='https://ameblo.jp/essence-yumi' target='_blank').btn.btn-primary
+          i.ai-refresh-cw.me-2
+          | ブログ
+
+
+  // Testimonials
+  section.bg-faded-primary.position-relative.py-md-7.py-5
+    .container
+      .row
+        .col-lg-6.col-md-7.order-md-1.order-2
+
+
+
+              // Carousel item
+              blockquote.blockquote.mt-3.mb-0
+                p 目には見えないけれど、あなたの内にある生命力は、本来はイキイキと流れています。生命エネルギーの流れが滞ると元気がなくなり、病気になります。じゃあどうしたらいいのでしょうか？自然の力を借りて、バランスを取り戻してみませんか？
+
+                footer.d-flex.align-items-center
+                  img(src='img/user/testimonials/DSC_0132.jpeg' alt='淺田ゆみ' width='42').rounded-circle
+                  .text-heading.fs-md.fw-medium.ps-2.ms-1
+                    a(href='/homoeopathy-profile.html') 淺田ゆみ
+
+
+
+        .col-md-5.offset-lg-1.order-md-2.order-1.mb-md-0.mb-grid-gutter
+          lottie-player(src="https://assets4.lottiefiles.com/private_files/lf30_T5tVEx.json"  background="transparent"  speed="0.5" loop autoplay).d-block.mx-md-0.mx-auto.w-100.h-100
+    .shape.shape-bottom.shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3000 185.4')
+        path(fill='currentColor' d='M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z')
+
+
+  // Socials
+  section(style='background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);').position-relative.py-6.bg-no-repeat.bg-position-center-bottom.overflow-hidden
+
+    // Parallax
+    .parallax
+      .parallax-layer(data-depth='0.1')
+        img(src='img/demo/personal-portfolio/socials/figure-1.png' alt='Layer 1')
+      .parallax-layer(data-depth='0.15')
+        img(src='img/demo/personal-portfolio/socials/figure-2.png' alt='Layer 2')
+      .parallax-layer(data-depth='0.25')
+        img(src='img/demo/personal-portfolio/socials/figure-3.png' alt='Layer 3')
+
+    // Content
+    div(style='top: 0; left: 0; z-index: 9').d-flex.align-items-center.position-absolute.w-100.h-100
+      .container
+        h2.mb-4.pb-sm-3.text-center Follow me
+        .text-center
+          a(href='https://www.instagram.com/wildflowers_yumi/' style='background-color: #ea4c89;').btn.btn-lg.text-white.mb-2.me-sm-4.me-2
+            i.ai-instagram.lead.me-2
+            | Instagram
+
+
+
+//- Footer
+block footer
+
+  // Footer
+  footer.footer.pb-4.mt-sm-n5
+    .container.fs-sm.text-center
+      span.text-muted © All rights reserved. 日本ホメオパシーセンター奈良 学園前

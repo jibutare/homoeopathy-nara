@@ -1,0 +1,63 @@
+extends partials/layout
+
+//- Override default config variables
+append config
+  - var parentMenu = 'Pages'
+  - var pageTitle = '404 Error'
+  - var isPageFullHeight = true
+
+
+//- Navbar
+block navbar
+
+  // Navbar (Solid background + shadow)
+  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
+  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
+    .navbar-search.bg-light
+      .container.d-flex.flex-nowrap.align-items-center
+        i.ai-search.fs-xl
+        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
+        .d-flex.align-items-center
+          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
+          button(type='button' data-bs-toggle='search').btn-close.p-2
+    .container.px-0.px-xl-3
+      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
+        span.navbar-toggler-icon
+      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
+        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
+        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
+      .d-flex.align-items-center.order-lg-3.ms-lg-auto
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none お知らせ
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block お知らせ
+      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
+        .offcanvas-header.navbar-shadow
+          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
+          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
+        .offcanvas-body
+          //- partial/menu-primary
+          include partials/menu-primary
+        .offcanvas-footer
+          a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.d-block.w-100.btn-primary お知らせ
+
+//- Page Content
+block content
+  .container.d-flex.flex-column.justify-content-center.pt-5.mt-n6(style='flex: 1 0 auto;')
+    .pt-7.pb-5
+      .text-center.mb-2.pb-4
+        h1.mb-grid-gutter
+          img(src='img/pages/404/404-illustration.svg' alt='Error 404').d-inline-block
+          span.visually-hidden Error 404
+          span.d-block.pt-3.fs-sm.fw-semibold.text-danger Error code: 404
+        h2 お探しのページがみつかりません
+
+        a(href='index.html').btn.btn-translucent-primary.me-3 ホームへもどる
+        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.me-3 ブログ
+
+
+//- Footer
+block footer
+
+  // Footer
+  footer.footer.pb-4.mt-sm-n5
+    .container.fs-sm.text-center
+      span.text-muted © All rights reserved. 日本ホメオパシーセンター奈良 学園前
