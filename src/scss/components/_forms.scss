@@ -178,6 +178,13 @@ input[type="search"]::-webkit-search-results-decoration {
   .form-check-input {
     border: 0;
     background: none;
+    &:checked {
+      background-image: none !important;
+    }
+    &:disabled ~ .form-option-label {
+      color: $text-muted;
+      pointer-events: none;
+    }
   }
 }
 .form-option-label {

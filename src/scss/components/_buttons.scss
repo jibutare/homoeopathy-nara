@@ -314,10 +314,6 @@
     opacity: 1;
   }
 
-  &.right-15 {
-    right: ($spacer * 1.25) + .9375rem;
-  }
-
   @include media-breakpoint-down(sm) {
     width: $btn-scroll-top-size / 1.2;
     height: $btn-scroll-top-size / 1.2;
@@ -326,9 +322,6 @@
       line-height: $btn-scroll-top-size / 1.2;
     }
     &.show { right: $spacer; }
-    &.right-15 {
-      right: $spacer + .9375rem;
-    }
   }
 }
 

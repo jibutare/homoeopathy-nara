@@ -29,10 +29,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  &.right-15 {
-    right: 15px;
-    width: calc(100% - 15px);
-  }
 }
 
 // Textual navbar brand
@@ -57,11 +53,6 @@
   animation: navbar-show .25s;
   background-color: $navbar-stuck-bg;
   box-shadow: $navbar-stuck-shadow;
-}
-.navbar-sticky.navbar-stuck.right-15,
-.navbar.fixed-top.right-15 {
-  right: 15px;
-  width: calc(100% - 15px);
 }
 @keyframes navbar-show {
   from {
