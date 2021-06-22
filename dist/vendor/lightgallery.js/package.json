@@ -2,7 +2,7 @@
   "_args": [
     [
       "lightgallery.js@1.4.0",
-      "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp"
+      "/home/masaaki/git/src/github/homoeopathy-nara.jp"
     ]
   ],
   "_from": "lightgallery.js@1.4.0",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/lightgallery.js/-/lightgallery.js-1.4.0.tgz",
   "_spec": "1.4.0",
-  "_where": "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp",
+  "_where": "/home/masaaki/git/src/github/homoeopathy-nara.jp",
   "author": {
     "name": "Sachin N",
     "email": "sachi77n@gmail.com",

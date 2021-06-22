@@ -1,5 +1,5 @@
 /**
- * SimpleBar.js - v5.3.3
+ * SimpleBar.js - v5.3.4
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -21,7 +21,7 @@ import 'core-js/modules/web.dom-collections.iterator';
 import throttle from 'lodash.throttle';
 import debounce from 'lodash.debounce';
 import memoize from 'lodash.memoize';
-import ResizeObserver from 'resize-observer-polyfill';
+import { ResizeObserver } from '@juggle/resize-observer';
 import 'core-js/modules/es.array.reduce';
 import 'core-js/modules/es.function.name';
 import 'core-js/modules/es.regexp.exec';
