@@ -1,32 +1,32 @@
 {
   "_args": [
     [
-      "simplebar@5.3.2",
-      "/home/masaaki/git/src/github/homoeopathy-nara.jp"
+      "simplebar@5.3.3",
+      "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp"
     ]
   ],
-  "_from": "simplebar@5.3.2",
-  "_id": "simplebar@5.3.2",
+  "_from": "simplebar@5.3.3",
+  "_id": "simplebar@5.3.3",
   "_inBundle": false,
-  "_integrity": "sha512-z43AVhLPoERlilEi+4o4ED4yHAckhEw0uCeR9SUS0fh07PjUfPtfMcGed8P8zb0YO3t+w2tUe1/RJnV4y0wjeA==",
+  "_integrity": "sha512-OfuSX47Axq9aR6rp9WK3YefAg+1Qw3UKKxS46PdElPpd+FWXMj17/nispYxsHtU3F7mv+ilmqELWmRt7KUgHgg==",
   "_location": "/simplebar",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "simplebar@5.3.2",
+    "raw": "simplebar@5.3.3",
     "name": "simplebar",
     "escapedName": "simplebar",
-    "rawSpec": "5.3.2",
+    "rawSpec": "5.3.3",
     "saveSpec": null,
-    "fetchSpec": "5.3.2"
+    "fetchSpec": "5.3.3"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/simplebar/-/simplebar-5.3.2.tgz",
-  "_spec": "5.3.2",
-  "_where": "/home/masaaki/git/src/github/homoeopathy-nara.jp",
+  "_resolved": "https://registry.npmjs.org/simplebar/-/simplebar-5.3.3.tgz",
+  "_spec": "5.3.3",
+  "_where": "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp",
   "author": {
     "name": "Adrien Denat from a fork by Jonathan Nicol"
   },
@@ -56,7 +56,7 @@
     "src",
     "README.md"
   ],
-  "gitHead": "274214fee1852533e7b36ac26bd0ceaa9ce975c4",
+  "gitHead": "3a2b2b4a534957211f81bcf6821a2afefd7dc579",
   "homepage": "https://grsmto.github.io/simplebar/",
   "license": "MIT",
   "lint-staged": {
@@ -86,5 +86,5 @@
   "style": "dist/simplebar.min.css",
   "title": "SimpleBar.js",
   "types": "dist/simplebar.d.ts",
-  "version": "5.3.2"
+  "version": "5.3.3"
 }

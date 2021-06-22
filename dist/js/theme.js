@@ -1,4 +1,4 @@
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
@@ -311,90 +311,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     });
   }();
   /**
-   * Offcanvas toggler
-  */
-
-
-  var offcanvas = function () {
-    var offcanvasTogglers = document.querySelectorAll('[data-bs-toggle="offcanvas"]'),
-        offcanvasDismissers = document.querySelectorAll('[data-bs-dismiss="offcanvas"]'),
-        offcanvas = document.querySelectorAll('.offcanvas'),
-        docBody = document.body,
-        fixedElements = document.querySelectorAll('[data-fixed-element]'),
-        hasScrollbar = window.innerWidth > docBody.clientWidth; // Creating backdrop
-
-    var backdrop = document.createElement('div');
-    backdrop.classList.add('offcanvas-backdrop'); // Open offcanvas function
-
-    var offcanvasOpen = function offcanvasOpen(offcanvasID, toggler) {
-      var backdropContainer = document.querySelector(offcanvasID).parentNode;
-      backdropContainer.appendChild(backdrop);
-      setTimeout(function () {
-        backdrop.classList.add('show');
-      }, 20);
-      document.querySelector(offcanvasID).setAttribute('data-offcanvas-show', true);
-
-      if (hasScrollbar) {
-        docBody.style.paddingRight = '15px';
-
-        if (fixedElements.length) {
-          for (var i = 0; i < fixedElements.length; i++) {
-            fixedElements[i].classList.add('right-15');
-          }
-        }
-      }
-
-      docBody.classList.add('offcanvas-open');
-    }; // Close offcanvas function
-
-
-    var offcanvasClose = function offcanvasClose() {
-      for (var i = 0; i < offcanvas.length; i++) {
-        offcanvas[i].removeAttribute('data-offcanvas-show');
-      }
-
-      backdrop.classList.remove('show');
-      setTimeout(function () {
-        backdrop.parentNode.removeChild(backdrop);
-      }, 250);
-
-      if (hasScrollbar) {
-        docBody.style.paddingRight = 0;
-
-        if (fixedElements.length) {
-          for (var _i = 0; _i < fixedElements.length; _i++) {
-            fixedElements[_i].classList.remove('right-15');
-          }
-        }
-      }
-
-      docBody.classList.remove('offcanvas-open');
-    }; // Open offcanvas event handler
-
-
-    for (var i = 0; i < offcanvasTogglers.length; i++) {
-      offcanvasTogglers[i].addEventListener('click', function (e) {
-        e.preventDefault();
-        offcanvasOpen(e.currentTarget.dataset.bsTarget, e.currentTarget);
-      });
-    } // Close offcanvas event handler
-
-
-    for (var _i2 = 0; _i2 < offcanvasDismissers.length; _i2++) {
-      offcanvasDismissers[_i2].addEventListener('click', function (e) {
-        e.preventDefault();
-        offcanvasClose();
-      });
-    } // Close offcanvas by clicking on backdrop
-
-
-    document.addEventListener('click', function (e) {
-      if (e.target.classList[0] === 'offcanvas-backdrop') {
-        offcanvasClose();
-      }
-    });
-  }();
-  /**
    * Animate scroll to top button in/off view
   */
 
@@ -701,52 +617,52 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     } // Bar chart
 
 
-    for (var _i3 = 0; _i3 < barChart.length; _i3++) {
-      var _data = JSON.parse(barChart[_i3].dataset.barChart),
-          _options = barChart[_i3].dataset.options != undefined ? JSON.parse(barChart[_i3].dataset.options) : '',
-          _seriesColor = barChart[_i3].dataset.seriesColor,
+    for (var _i = 0; _i < barChart.length; _i++) {
+      var _data = JSON.parse(barChart[_i].dataset.barChart),
+          _options = barChart[_i].dataset.options != undefined ? JSON.parse(barChart[_i].dataset.options) : '',
+          _seriesColor = barChart[_i].dataset.seriesColor,
           _userColors = void 0;
 
-      barChart[_i3].classList.add('bar-chart-' + _i3);
+      barChart[_i].classList.add('bar-chart-' + _i);
 
       if (_seriesColor != undefined) {
         _userColors = JSON.parse(_seriesColor);
 
         for (var _n = 0; _n < _userColors.colors.length; _n++) {
-          css = "\n        .bar-chart-".concat(_i3, " .ct-series:nth-child(").concat(_n + 1, ") .ct-bar {\n            stroke: ").concat(_userColors.colors[_n], " !important;\n          }\n        ");
+          css = "\n        .bar-chart-".concat(_i, " .ct-series:nth-child(").concat(_n + 1, ") .ct-bar {\n            stroke: ").concat(_userColors.colors[_n], " !important;\n          }\n        ");
           style.appendChild(document.createTextNode(css));
         }
       }
 
-      new Chartist.Bar(barChart[_i3], _data, _options);
+      new Chartist.Bar(barChart[_i], _data, _options);
     } // Pie chart
 
 
-    var _loop5 = function _loop5(_i4) {
-      var data = JSON.parse(pieChart[_i4].dataset.pieChart),
-          seriesColor = pieChart[_i4].dataset.seriesColor,
+    var _loop5 = function _loop5(_i2) {
+      var data = JSON.parse(pieChart[_i2].dataset.pieChart),
+          seriesColor = pieChart[_i2].dataset.seriesColor,
           userColors = void 0;
 
-      pieChart[_i4].classList.add('cz-pie-chart-' + _i4);
+      pieChart[_i2].classList.add('cz-pie-chart-' + _i2);
 
       if (seriesColor != undefined) {
         userColors = JSON.parse(seriesColor);
 
         for (var _n2 = 0; _n2 < userColors.colors.length; _n2++) {
-          css = "\n        .cz-pie-chart-".concat(_i4, " .ct-series:nth-child(").concat(_n2 + 1, ") .ct-slice-pie {\n            fill: ").concat(userColors.colors[_n2], " !important;\n          }\n        ");
+          css = "\n        .cz-pie-chart-".concat(_i2, " .ct-series:nth-child(").concat(_n2 + 1, ") .ct-slice-pie {\n            fill: ").concat(userColors.colors[_n2], " !important;\n          }\n        ");
           style.appendChild(document.createTextNode(css));
         }
       }
 
-      new Chartist.Pie(pieChart[_i4], data, {
+      new Chartist.Pie(pieChart[_i2], data, {
         labelInterpolationFnc: function labelInterpolationFnc(value) {
           return Math.round(value / data.series.reduce(sum) * 100) + '%';
         }
       });
     };
 
-    for (var _i4 = 0; _i4 < pieChart.length; _i4++) {
-      _loop5(_i4);
+    for (var _i2 = 0; _i2 < pieChart.length; _i2++) {
+      _loop5(_i2);
     }
   }();
   /**
@@ -936,10 +852,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         function changePreview(e) {
           e.preventDefault();
 
-          for (var _i5 = 0; _i5 < thumbnails.length; _i5++) {
-            previews[_i5].classList.remove('active');
+          for (var _i3 = 0; _i3 < thumbnails.length; _i3++) {
+            previews[_i3].classList.remove('active');
 
-            thumbnails[_i5].classList.remove('active');
+            thumbnails[_i3].classList.remove('active');
           }
 
           this.classList.add('active');

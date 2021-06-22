@@ -26,3 +26,4 @@ import rangeSlider from './components/range-slider';
 import viewSwitcher from './components/view-switcher';
 import checkboxToggleClass from './components/checkbox-toggle-class';
 import masterCheckbox from './components/master-checkbox';
+import adobefont from './components/adobefont';
