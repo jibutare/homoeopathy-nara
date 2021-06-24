@@ -48,8 +48,15 @@ block content
   section.container.mb-3.my-md-0.py-5.py-md-6
     .row.align-items-center
       .col-lg-5.col-md-5.order-md-1.order-2.text-md-start.text-center
-        h1.display-4.mb-lg-4.mb-3 アクセスと営業時間
+        h1.display-4.mb-lg-4.mb-3 ご予約・アクセス
         h2.h3.mb-lg-5.mb-4.text-muted 奈良県奈良市
+        .text-nowrap
+          a(href='https://ws.formzu.net/fgen/S42789174/').btn.btn-translucent-primary.me-3
+            i.ai-mail.mt-n1.me-2
+            | ご予約
+          a(href='https://ws.formzu.net/fgen/S80736128/' data-scroll).btn.btn-outline-primary
+            i.ai-mail.mt-n1.me-2
+            | お問い合わせ
       .col-lg-7.col-md-7.order-md-2.order-1.mb-md-0.mb-grid-gutter
         img(src='img/user/homeopathy/DSC_6150.jpg' alt='奈良公園の鹿').rounded-3
 
@@ -73,15 +80,16 @@ block content
               li 月・火・金・土
               li 11:00〜18:00
               li 完全予約制
+              a(href='https://ameblo.jp/essence-yumi/').fancy-link.fs-sm ご予約のスケジュール
       .col-lg-4.col-sm-6.mb-grid-gutter
         .card.h-100.border-0.shadow-lg.py-4
           .card-body.text-center
             i.ai-mail.mb-4.text-warning(style='font-size: 2.25rem;')
-            h3.h6.mb-2 Eメール
+            h3.h6.mb-2 ご予約
             ul.list-unstyled.fs-sm.mb-0
               li
-                span.me-1 ご予約:
-                a(href='mailto:yumi@homoeopathy-nara.jp').nav-link-style yumi@homoeopathy-nara.jp
+                span.me-1 ご予約用フォーム:
+                a(href='https://ws.formzu.net/fgen/S42789174/').fancy-link.fs-sm 新規お申し込み
 
   // Map + Contact form
   section#map.border-top.mb-5.mb-md-6
