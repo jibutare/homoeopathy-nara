@@ -167,27 +167,8 @@ block content
       svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3000 185.4')
         path(fill='currentColor' d='M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z')
 
-  // Socials
-  section(style='background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);').position-relative.py-6.bg-no-repeat.bg-position-center-bottom.overflow-hidden
-
-    // Parallax
-    .parallax
-      .parallax-layer(data-depth='0.1')
-        img(src='img/demo/personal-portfolio/socials/figure-1.png' alt='Layer 1')
-      .parallax-layer(data-depth='0.15')
-        img(src='img/demo/personal-portfolio/socials/figure-2.png' alt='Layer 2')
-      .parallax-layer(data-depth='0.25')
-        img(src='img/demo/personal-portfolio/socials/figure-3.png' alt='Layer 3')
-
-    // Content
-    div(style='top: 0; left: 0; z-index: 9').d-flex.align-items-center.position-absolute.w-100.h-100
-      .container
-        h2.mb-4.pb-sm-3.text-center Follow me
-        .text-center
-          a(href='https://www.instagram.com/wildflowers_yumi/' style='background-color: #667302;').btn.btn-lg.text-white.mb-2.me-sm-4.me-2
-            i.ai-instagram.lead.me-2
-            | Instagram
-
+  //- Social template
+  include partials/usersocials
 
 //- Footer
 block footer
