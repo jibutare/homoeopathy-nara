@@ -39,12 +39,8 @@ interface CssClasses {
     valueSub: string;
 }
 
-export interface PartialFormatter {
+interface Formatter {
     to: (value: number) => string | number;
-    from?: (value: string) => number | false;
-}
-
-export interface Formatter extends PartialFormatter {
     from: (value: string) => number | false;
 }
 
@@ -79,7 +75,7 @@ interface BasePips {
     mode: PipsMode;
     density?: number;
     filter?: PipsFilter;
-    format?: PartialFormatter;
+    format?: Formatter;
 }
 
 interface PositionsPips extends BasePips {
@@ -124,7 +120,7 @@ interface UpdatableOptions {
     step?: number;
     pips?: Pips;
     format?: Formatter;
-    tooltips?: boolean | PartialFormatter | (boolean | PartialFormatter)[];
+    tooltips?: boolean | Formatter | (boolean | Formatter)[];
     animate?: boolean;
 }
 
@@ -140,7 +136,7 @@ export interface Options extends UpdatableOptions {
     documentElement?: HTMLElement;
     cssPrefix?: string;
     cssClasses?: CssClasses;
-    ariaFormat?: PartialFormatter;
+    ariaFormat?: Formatter;
     animationDuration?: number;
 }
 
@@ -163,14 +159,14 @@ interface ParsedOptions {
     step?: number;
     orientation?: "vertical" | "horizontal";
     direction?: "ltr" | "rtl";
-    tooltips?: (boolean | PartialFormatter)[];
+    tooltips?: (boolean | Formatter)[];
     keyboardSupport: boolean;
     keyboardPageMultiplier: number;
     keyboardDefaultStep: number;
     documentElement?: HTMLElement;
     cssPrefix?: string | false;
     cssClasses: CssClasses;
-    ariaFormat: PartialFormatter;
+    ariaFormat: Formatter;
     pips?: Pips;
     animationDuration: number;
     snap?: boolean;
@@ -192,7 +188,7 @@ export interface API {
     steps: () => NextStepsForHandle[];
     on: (eventName: string, callback: EventCallback) => void;
     off: (eventName: string) => void;
-    get: (unencoded?: boolean) => GetResult;
+    get: () => GetResult;
     set: (input: number | string | (number | string)[], fireSetEvent?: boolean, exactInput?: boolean) => void;
     setHandle: (handleNumber: number, value: number | string, fireSetEvent?: boolean, exactInput?: boolean) => void;
     reset: (fireSetEvent?: boolean) => void;
@@ -281,12 +277,7 @@ type EventCallback = (
 //region Helper Methods
 
 function isValidFormatter(entry: unknown): entry is Formatter {
-    return isValidPartialFormatter(entry) && typeof (<Formatter>entry).from === "function";
-}
-
-function isValidPartialFormatter(entry: unknown): entry is PartialFormatter {
-    // partial formatters only need a to function and not a from function
-    return typeof entry === "object" && typeof (<Formatter>entry).to === "function";
+    return typeof entry === "object" && typeof (<Formatter>entry).to === "function" && typeof (<Formatter>entry).from === "function";
 }
 
 function removeElement(el: HTMLElement): void {
@@ -898,6 +889,15 @@ const INTERNAL_EVENT_NS = {
 
 //endregion
 
+function validateFormat(entry: Formatter): true | never {
+    // Any object with a to and from method is supported.
+    if (isValidFormatter(entry)) {
+        return true;
+    }
+
+    throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
+}
+
 function testStep(parsed: ParsedOptions, entry: unknown): void {
     if (!isNumeric(entry)) {
         throw new Error("noUiSlider: 'step' is not numeric.");
@@ -1153,7 +1153,7 @@ function testTooltips(parsed: ParsedOptions, entry: boolean | Formatter | (boole
         return;
     }
 
-    if (entry === true || isValidPartialFormatter(entry)) {
+    if (entry === true || isValidFormatter(entry)) {
         parsed.tooltips = [];
 
         for (let i = 0; i < parsed.handles; i++) {
@@ -1167,7 +1167,10 @@ function testTooltips(parsed: ParsedOptions, entry: boolean | Formatter | (boole
         }
 
         entry.forEach(function(formatter) {
-            if (typeof formatter !== "boolean" && !isValidPartialFormatter(formatter)) {
+            if (
+                typeof formatter !== "boolean" &&
+                (typeof formatter !== "object" || typeof formatter.to !== "function")
+            ) {
                 throw new Error("noUiSlider: 'tooltips' must be passed a formatter or 'false'.");
             }
         });
@@ -1176,19 +1179,13 @@ function testTooltips(parsed: ParsedOptions, entry: boolean | Formatter | (boole
     }
 }
 
-function testAriaFormat(parsed: ParsedOptions, entry: PartialFormatter): void {
-    if (!isValidPartialFormatter(entry)) {
-        throw new Error("noUiSlider: 'ariaFormat' requires 'to' method.");
-    }
-
+function testAriaFormat(parsed: ParsedOptions, entry: Formatter): void {
+    validateFormat(entry);
     parsed.ariaFormat = entry;
 }
 
 function testFormat(parsed: ParsedOptions, entry: Formatter): void {
-    if (!isValidFormatter(entry)) {
-        throw new Error("noUiSlider: 'format' requires 'to' and 'from' methods.");
-    }
-
+    validateFormat(entry);
     parsed.format = entry;
 }
 
@@ -1716,7 +1713,7 @@ function scope(target: TargetElement, options: ParsedOptions, originalOptions: O
     function addMarking(
         spread: { [key: string]: [number, PipsType] },
         filterFunc: PipsFilter | undefined,
-        formatter: PartialFormatter
+        formatter: Formatter
     ): HTMLElement {
         const element = scope_Document.createElement("div");
 
@@ -1791,10 +1788,11 @@ function scope(target: TargetElement, options: ParsedOptions, originalOptions: O
 
         const spread = generateSpread(pips);
         const filter = pips.filter;
-        const format: PartialFormatter = pips.format || {
+        const format: Formatter = pips.format || {
             to: function(value) {
                 return String(Math.round(value));
-            }
+            },
+            from: Number
         };
 
         scope_Pips = scope_Target.appendChild(addMarking(spread, filter, format));
@@ -2735,11 +2733,7 @@ function scope(target: TargetElement, options: ParsedOptions, originalOptions: O
     }
 
     // Get the slider value.
-    function valueGet(unencoded = false): GetResult {
-        if (unencoded) {
-            // return a copy of the raw values
-            return scope_Values.length === 1 ? scope_Values[0] : scope_Values.slice(0);
-        }
+    function valueGet(): GetResult {
         const values = scope_Values.map(options.format.to);
 
         // If only one handle is used, return a single value.
