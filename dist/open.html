@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>淺田ゆみ | ホメオパシーとは?</title>
+    <title>奈良の小さな相談室　ヒノ香 | ホメオパシーとは?</title>
     <!-- SEO Meta Tags-->
     <meta name="description" content="Around - Multipurpose Bootstrap Template">
     <meta name="keywords" content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
@@ -114,31 +114,99 @@
       </div>
     </div>
     <main class="page-wrapper">
-      <!-- Navbar (Solid background + shadow)-->
-      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
-      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
-        <div class="navbar-search bg-light">
-          <div class="container d-flex flex-nowrap align-items-center"><i class="ai-search fs-xl"></i>
-            <input class="form-control form-control-xl navbar-search-field" type="text" placeholder="Search site">
-            <div class="d-flex align-items-center"><span class="text-muted fs-xs mt-1 d-none d-sm-inline">Close</span>
-              <button class="btn-close p-2" type="button" data-bs-toggle="search"></button>
+      <!-- Sign In Modal-->
+      <div class="modal fade" id="modal-signin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <div class="view show" id="modal-signin-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign in</h4>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close "></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">Sign in to your account using email and password provided during registration.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <div class="input-group"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                      <input class="form-control rounded" type="email" placeholder="Email" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group"><i class="ai-lock position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                      <div class="password-toggle w-100">
+                        <input class="form-control" type="password" placeholder="Password" required>
+                        <label class="password-toggle-btn" aria-label="Show/hide password">
+                          <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-3 mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="keep-signed">
+                      <label class="form-check-label fs-sm" for="keep-signed">Keep me signed in</label>
+                    </div><a class="nav-link-style fs-ms" href="password-recovery.html">Forgot password?</a>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">Sign in</button>
+                  <p class="fs-sm pt-3 mb-0">Don't have an account? <a href='#' class='fw-medium' data-view='#modal-signup-view'>Sign up</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="view" id="modal-signup-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign up</h4>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close"></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">Registration takes less than a minute but gives you full control over your orders.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Full name" required>
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Email" required>
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input class="form-control" type="password" placeholder="Password" required>
+                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                      <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input class="form-control" type="password" placeholder="Confirm password" required>
+                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                      <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">Sign up</button>
+                  <p class="fs-sm pt-3 mb-0">Already have an account? <a href='#' class='fw-medium' data-view='#modal-signin-view'>Sign in</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="modal-body text-center px-4 pt-2 pb-4">
+              <hr class="my-0">
+              <p class="fs-sm fw-medium text-heading pt-4">Or sign in with</p><a class="btn-social bs-facebook bs-lg mx-1 mb-2" href="#"><i class="ai-facebook"></i></a><a class="btn-social bs-twitter bs-lg mx-1 mb-2" href="#"><i class="ai-twitter"></i></a><a class="btn-social bs-instagram bs-lg mx-1 mb-2" href="#"><i class="ai-instagram"></i></a><a class="btn-social bs-google bs-lg mx-1 mb-2" href="#"><i class="ai-google"></i></a>
             </div>
           </div>
         </div>
+      </div>
+      <!-- Navbar (Solid background)-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header data-fixed-element>
         <div class="container px-0 px-xl-3">
-          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html"><img class="d-none d-lg-block" src="img/logo/logo-dark.png" alt="hinoka" width="153"><img class="d-lg-none" src="img/logo/logo-icon.png" alt="hinoka" width="58"></a>
-          <div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a><a class="btn btn-sm btn-primary d-lg-none d-inline-block" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a></div>
+          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4 fs-6 text-warning f-wanpakurera" href="index.html">日本ホメオパシーセンター奈良 学園前</a>
+          <div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a></div>
           <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
             <div class="offcanvas-header navbar-shadow">
-              <h6 class="mt-1 mb-0"><small>日本ホメオパシーセンター奈良 学園前</small></h6>
+              <fs-4 class="mt-1 mb-0 text-warning f-wanpakurera">ヒノ香</fs-4>
               <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <!-- Menu-->
               <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="/homoeopathy.html">ホメオパシー</a></li>
-                <li class="nav-item"><a class="nav-link" href="/talk-about-your-health.html">健康相談会</a></li>
-                <li class="nav-item"><a class="nav-link" href="/time-fee.html">相談料</a></li>
+                <li class="nav-item"><a class="nav-link" href="/session.html">セッション</a></li>
+                <li class="nav-item"><a class="nav-link" href="/time-fee.html">料金</a></li>
                 <li class="nav-item"><a class="nav-link" href="/homoeopathy-profile.html">ホメオパスプロフィル</a></li>
                 <li class="nav-item active"><a class="nav-link" href="/open.html">ご予約・アクセス</a></li>
               </ul>
@@ -152,9 +220,9 @@
       <section class="container mb-3 my-md-0 py-5 py-md-6">
         <div class="row align-items-center">
           <div class="col-lg-4 col-md-5 order-md-1 order-2 text-md-start text-center">
-            <h1 class="display-4 mb-lg-4 mb-3">ご予約<br>アクセス</h1>
-            <h2 class="h3 mb-lg-5 mb-4 text-muted">奈良県奈良市</h2>
-            <div class="text-nowrap"><a class="btn btn-translucent-primary me-3" href="https://ws.formzu.net/fgen/S42789174/"><i class="ai-mail mt-n1 me-2"></i>ご予約</a><a class="btn btn-outline-primary" href="https://ws.formzu.net/fgen/S80736128/" data-scroll><i class="ai-mail mt-n1 me-2"></i>お問い合わせ</a></div>
+            <h1 class="display-4 mb-lg-4 mb-3">ご予約・アクセス</h1>
+            <h2 class="fs-6 mb-lg-5 mb-4 text-muted">奈良県奈良市</h2>
+            <div class="text-nowrap"><a class="btn btn-outline-primary" href="https://ws.formzu.net/fgen/S80736128/" data-scroll><i class="ai-mail mt-n1 me-2"></i>お問い合わせ</a></div>
           </div>
           <div class="col-lg-8 col-md-7 order-md-2 order-1 mb-md-0 mb-grid-gutter"><img class="rounded-3" src="img/user/homeopathy/DSC_6150.jpg" alt="奈良公園の鹿"></div>
         </div>
@@ -162,33 +230,44 @@
       <!-- Contact cards (details)-->
       <section class="container-fluid mb-5 mb-md-6">
         <div class="row">
-          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card h-100 border-0 shadow-lg py-4">
-              <div class="card-body text-center"><i class="ai-map-pin mb-4 text-primary" style="font-size: 2.25rem;"></i>
-                <h3 class="h6 mb-2">バス亭「東登美ヶ丘1丁目西口」から徒歩約7分(600m)</h3>
-                <p class="fs-sm mb-2">ご予約の際、当センターの詳細をご案内いたします。</p><a class="fancy-link fs-sm" href="#map" data-scroll>地図を見る</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card h-100 border-0 shadow-lg py-4">
-              <div class="card-body text-center"><i class="ai-clock mb-4 text-danger" style="font-size: 2.25rem;"></i>
-                <h3 class="h6 mb-2">営業日と営業時間</h3>
-                <ul class="list-unstyled fs-sm mb-0">
-                  <li>月・火・金・土</li>
-                  <li>11:00〜18:00</li>
-                  <li>完全予約制</li><a class="fancy-link fs-sm" href="https://ameblo.jp/essence-yumi/">ご予約のスケジュール</a>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card h-100 border-0 shadow-lg py-4">
+          <div class="col-lg-6 col-sm-6 mb-grid-gutter">
+            <div class="card h-100 border-warning py-4">
               <div class="card-body text-center"><i class="ai-mail mb-4 text-warning" style="font-size: 2.25rem;"></i>
                 <h3 class="h6 mb-2">ご予約</h3>
                 <ul class="list-unstyled fs-sm mb-0">
                   <li><span class="me-1">ご予約用フォーム:</span><a class="fancy-link fs-sm" href="https://ws.formzu.net/fgen/S42789174/">新規お申し込み</a></li>
+                  <li>初回の受付はお電話でさせていただいておりますが、まずフォームに入力し送信してください。</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 mb-grid-gutter">
+            <div class="card h-100 border-warning py-4">
+              <div class="card-body text-center"><i class="ai-wechat mb-4 text-warning" style="font-size: 2.25rem;"></i>
+                <h3 class="h6 mb-2">相談方法</h3>
+                <p class="fs-sm">対面, zoom, 電話 のいずれかお選びください。</p>
+                <p class="fs-sm">ご注意とお願い<br>セッションルームには入りませんが犬と猫がいます。<br>動物の毛にアレルギーのある方は通信相談をご利用ください。</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 mb-grid-gutter">
+            <div class="card h-100 border-warning py-4">
+              <div class="card-body text-center"><i class="ai-clock mb-4 text-warning" style="font-size: 2.25rem;"></i>
+                <h3 class="h6 mb-2">営業日と営業時間</h3>
+                <ul class="list-unstyled fs-sm mb-0">
+                  <li>月・火・金・土</li>
+                  <li>11:00〜18:00</li>
+                  <li>セッション枠 - 11:00〜 14:00〜 16:00〜</li>
+                </ul>
+                <p class="fs-sm"><br>*ご予約カレンダーでご確認ください。セッション内容で時間が前後する場合があります。</p><a class="fancy-link fs-sm" href="https://ameblo.jp/essence-yumi/">ご予約のスケジュール</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-sm-6 mb-grid-gutter">
+            <div class="card h-100 border-warning py-4">
+              <div class="card-body text-center"><i class="ai-map-pin mb-4 text-warning" style="font-size: 2.25rem;"></i>
+                <h3 class="h6 mb-2">対面セッションの場所</h3>
+                <p class="fs-sm mb-2">ご予約の際に詳しい場所をご案内します<br>奈良県奈良市東登美ヶ丘2丁目</p><a class="fancy-link fs-sm" href="#map" data-scroll>地図を見る</a>
               </div>
             </div>
           </div>
@@ -200,21 +279,21 @@
       </section>
       <!-- Contact cards (offices)-->
       <section class="container mb-5 mb-md-6">
-        <h2 class="text-center mb-4 pb-4">電車お越しの場合</h2>
+        <h3 class="h2 text-center mb-4 pb-4">電車お越しの場合</h3>
         <div class="row">
           <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card h-100 border-0 shadow mx-auto">
+            <div class="card h-100 mx-auto">
               <div class="card-body">
                 <h5 class="card-title">近鉄奈良線 学園前駅 北改札口</h5>
-                <p class="card-text fs-sm text-muted">奈良交通 「学園前駅北1番のりば」</p>
+                <p class="card-text fs-sm">奈良交通 「学園前駅北1番のりば」</p>
                 <ul class="list-unstyled mb-0">
                   <li class="d-flex align-items-start pb-3 border-bottom"><i class="ai-map-pin fs-lg mt-2 mb-0 text-primary"></i>
-                    <div class="ps-3"><span class="fs-ms text-muted">乗車</span>
+                    <div class="ps-3"><span class="fs-ms">乗車</span>
                       <div class="d-block fs-sm">「系統11・高の原駅行き」<span class="fs-xs">または</span>「系統1・東登美ヶ丘1丁目行き」</div>
                     </div>
                   </li>
                   <li class="d-flex align-items-start pb-3 border-bottom"><i class="ai-map-pin fs-lg mt-2 mb-0 text-primary"></i>
-                    <div class="ps-3"><span class="fs-ms text-muted">下車</span>
+                    <div class="ps-3"><span class="fs-ms">下車</span>
                       <div class="d-block fs-sm">「東登美ヶ丘1丁目西口」(所要時間約8分)</div>
                     </div>
                   </li>
@@ -223,18 +302,18 @@
             </div>
           </div>
           <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card h-100 border-0 shadow mx-auto">
+            <div class="card h-100 mx-auto">
               <div class="card-body">
                 <h5 class="card-title">近鉄京都線 高の原駅</h5>
-                <p class="card-text fs-sm text-muted">奈良交通 「1番のりば」</p>
+                <p class="card-text fs-sm">奈良交通 「1番のりば」</p>
                 <ul class="list-unstyled mb-0">
                   <li class="d-flex align-items-start pb-3 border-bottom"><i class="ai-map-pin fs-lg mt-2 mb-0 text-primary"></i>
-                    <div class="ps-3"><span class="fs-ms text-muted">乗車</span>
+                    <div class="ps-3"><span class="fs-ms">乗車</span>
                       <div class="d-block fs-sm">「系統11・学園前駅行き」</div>
                     </div>
                   </li>
                   <li class="d-flex align-items-start pb-3 border-bottom"><i class="ai-map-pin fs-lg mt-2 mb-0 text-primary"></i>
-                    <div class="ps-3"><span class="fs-ms text-muted">下車</span>
+                    <div class="ps-3"><span class="fs-ms">下車</span>
                       <div class="d-block fs-sm">「東登美ヶ丘1丁目西口」(所要時間約14分)</div>
                     </div>
                   </li>
@@ -243,16 +322,16 @@
             </div>
           </div>
           <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card h-100 border-0 shadow mx-auto">
+            <div class="card h-100 mx-auto">
               <div class="card-body">
                 <h5 class="card-title">参考サイト</h5>
-                <p class="card-text fs-sm text-muted">奈良交通とNAVITIME</p>
+                <p class="card-text fs-sm">奈良交通とNAVITIME</p>
                 <ul class="list-unstyled mb-0">
                   <li class="d-flex align-items-start pb-3 border-bottom"><i class="ai-map-pin fs-lg mt-2 mb-0 text-primary"></i>
-                    <div class="ps-3"><span class="fs-ms text-muted">奈良交通：路線バス、時刻表について調べたい時に</span><a class="d-block nav-link-style fs-sm" href="http://www.narakotsu.co.jp/" target="blank">奈良交通</a></div>
+                    <div class="ps-3"><span class="fs-ms">路線バス、時刻表について調べたい時に</span><a class="fancy-link fs-sm" href="http://www.narakotsu.co.jp/" target="blank">奈良交通</a></div>
                   </li>
                   <li class="d-flex align-items-start pb-3 border-bottom"><i class="ai-map-pin fs-lg mt-2 mb-0 text-primary"></i>
-                    <div class="ps-3"><span class="fs-ms text-muted">乗り換えや所要時間など調べたい時に便利</span><a class="d-block nav-link-style fs-sm" href="https://www.navitime.co.jp/bus/" target="blank">NAVITIME</a></div>
+                    <div class="ps-3"><span class="fs-ms">乗り換えや所要時間など調べたい時に便利</span><a class="fancy-link fs-sm" href="https://www.navitime.co.jp/bus/" target="blank">NAVITIME</a></div>
                   </li>
                 </ul>
               </div>
@@ -262,10 +341,10 @@
       </section>
       <!-- Contact cards (offices)-->
       <section class="container mb-5 mb-md-6">
-        <h2 class="text-center mb-4 pb-4">お車でお越しの場合</h2>
+        <h3 class="h2 text-center mb-4 pb-4">お車でお越しの場合</h3>
         <div class="row">
           <div class="col-lg-8 col-sm-6 mx-auto mb-grid-gutter">
-            <div class="card h-100 border-0 shadow mx-auto">
+            <div class="card h-100 mx-auto">
               <div class="card-body">
                 <h5 class="card-title">第二阪奈有料道路からは「中町」が便利です</h5>
                 <p class="card-text fs-sm">京奈和自動車道からは「精華学研」が最寄りです。ならやま大通りの「石窯パンキャパトル」がある交差点を南へ曲がってください。住宅街へ入る道なので交差点名がありません。 「東登美ヶ丘1丁目西」の信号から、東へ２つ目の信号になります。当センターの詳しい場所はご予約の際にご案内させていただきます。</p>
@@ -275,7 +354,7 @@
         </div>
       </section>
       <!-- Socials-->
-      <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);">
+      <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden py-7 my-5" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);">
         <!-- Parallax-->
         <div class="parallax">
           <div class="parallax-layer" data-depth="0.1"><img src="img/demo/personal-portfolio/socials/figure-1.png" alt="Layer 1"></div>
@@ -285,8 +364,9 @@
         <!-- Content-->
         <div class="d-flex align-items-center position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 9">
           <div class="container">
-            <h2 class="mb-4 pb-sm-3 text-center">Follow me</h2>
-            <div class="text-center"><a class="btn btn-lg text-white mb-2 me-sm-4 me-2" href="https://www.instagram.com/wildflowers_yumi/" style="background-color: #667302;"><i class="ai-instagram lead me-2"></i>Instagram</a></div>
+            <h2 class="mb-4 pb-sm-3 text-center">ヒノ香のSNS</h2>
+            <p class="text-center">内容にこだわらず、日々の暮らしや好きなことを写真と言葉で綴っています。<br>更新はかなりゆっくりめですがのぞいていただけるとうれしいです。</p>
+            <div class="text-center"><a class="btn btn-lg btn-warning text-white mb-2 me-sm-4 me-2" href="https://www.instagram.com/wildflowers_yumi/"><i class="ai-instagram lead me-2"></i>Instagram</a></div>
           </div>
         </div>
       </section>
@@ -306,6 +386,5 @@
     <script src="vendor/parallax-js/dist/parallax.min.js"></script>
     <!-- Main theme script-->
     <script src="js/theme.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
   </body>
 </html>

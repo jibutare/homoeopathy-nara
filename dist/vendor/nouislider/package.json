@@ -1,31 +1,31 @@
 {
   "_args": [
     [
-      "nouislider@15.1.1",
+      "nouislider@15.4.0",
       "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp"
     ]
   ],
-  "_from": "nouislider@15.1.1",
-  "_id": "nouislider@15.1.1",
+  "_from": "nouislider@15.4.0",
+  "_id": "nouislider@15.4.0",
   "_inBundle": false,
-  "_integrity": "sha512-xV9nabBSF59Q4vs5yNfnAey8AkEfq2bKM98e8wfg5jJM7IESGIViWHdjRoBsBGyljYenWt6fSJgczwt8ilKpew==",
+  "_integrity": "sha512-AV7UMhGhZ4Mj6ToMT812Ib8OJ4tAXR2/Um7C4l4ZvvsqujF0WpQTpqqHJ+9xt4174R7ueQOUrBR4yakJpAIPCA==",
   "_location": "/nouislider",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "nouislider@15.1.1",
+    "raw": "nouislider@15.4.0",
     "name": "nouislider",
     "escapedName": "nouislider",
-    "rawSpec": "15.1.1",
+    "rawSpec": "15.4.0",
     "saveSpec": null,
-    "fetchSpec": "15.1.1"
+    "fetchSpec": "15.4.0"
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nouislider/-/nouislider-15.1.1.tgz",
-  "_spec": "15.1.1",
+  "_resolved": "https://registry.npmjs.org/nouislider/-/nouislider-15.4.0.tgz",
+  "_spec": "15.4.0",
   "_where": "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp",
   "bugs": {
     "url": "https://github.com/leongersen/noUiSlider/issues"
@@ -57,10 +57,12 @@
     "url": "git://github.com/leongersen/noUiSlider.git"
   },
   "scripts": {
-    "build": "npm run build:js && npm run build:types && npm run build:styles",
-    "build:js": "npm run build:js:write && npm run build:js:compress",
+    "build": "npm run build:mjs && npm run build:js && npm run build:styles",
+    "build:js": "npm run build:js:write && npm run build:js:compress && npm run build:js:compress:mjs",
     "build:js:compress": "uglifyjs dist/nouislider.js --compress --mangle --output dist/nouislider.min.js",
+    "build:js:compress:mjs": "uglifyjs dist/nouislider.mjs --compress --mangle --output dist/nouislider.min.mjs",
     "build:js:write": "rollup -c rollup.config.js",
+    "build:mjs": "tsc --module ES6 && mv dist/nouislider.js dist/nouislider.mjs",
     "build:styles": "npm run build:styles:write && npm run build:styles:compress",
     "build:styles:compress": "lessc src/nouislider.less dist/nouislider.min.css --clean-css",
     "build:styles:write": "lessc src/nouislider.less dist/nouislider.css",
@@ -72,5 +74,5 @@
   },
   "style": "dist/nouislider.min.css",
   "types": "dist/nouislider.d.ts",
-  "version": "15.1.1"
+  "version": "15.4.0"
 }

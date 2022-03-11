@@ -1,5 +1,20 @@
 # Changelog
 
+### 15.4.0 (*2021-08-14*)
+- Added: `handleAttributes` option (#1019);
+- Added: `drag-all` behaviour (#756, #841, #1116);
+- Added: ESM/ES6 module distribution `dist/nouislider.mjs` (#1149);
+- Added: support for ranges where `min` = `max` (#236, #359, #578, #633, #676, #790);
+- Added: `getPositions` method;
+- Fixed: Duplicate change/set events when using `snap` behaviour (#1106);
+
+### 15.3.0 (*2021-08-10*)
+- Added: `keyboardMultiplier` option (#1151);
+
+### 15.2.0 (*2021-06-15*)
+- Added: `unencoded` boolean argument to `get` method to return raw slider values (#1145);
+- Added: support for "partial" formatters in `pips.format`, `ariaFormat` and `tooltips` options (#1140);
+
 ### 15.1.1 (*2021-05-09*)
 - Fixed: `tooltips` option accepts one `Formatter` for all tooltips (#1101);
 

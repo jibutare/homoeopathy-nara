@@ -10,36 +10,7 @@ append config
 
 //- Navbar + Contact modal
 block navbar
-
-  // Navbar (Solid background + shadow)
-  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
-  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
-    .navbar-search.bg-light
-      .container.d-flex.flex-nowrap.align-items-center
-        i.ai-search.fs-xl
-        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
-        .d-flex.align-items-center
-          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
-          button(type='button' data-bs-toggle='search').btn-close.p-2
-    .container.px-0.px-xl-3
-      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
-        span.navbar-toggler-icon
-      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
-        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
-        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
-      .d-flex.align-items-center.order-lg-3.ms-lg-auto
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none ご予約のスケジュール
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block ご予約のスケジュール
-      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
-        .offcanvas-header.navbar-shadow
-          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
-          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
-        .offcanvas-body
-          //- partial/menu-primary
-          include partials/menu-primary
-        .offcanvas-footer
-          a(href='https://ws.formzu.net/fgen/S80736128/' target='_blank').btn.d-block.w-100.btn-primary お問い合わせ
-
+  include partials/navbar-solid
 
 //- Page Content
 block content
@@ -48,8 +19,8 @@ block content
   section.container.mb-3.my-md-0.py-5.py-md-6
     .row.align-items-center
       .col-lg-4.col-md-5.order-md-1.order-2.text-md-start.text-center
-        h1.display-4.mb-lg-4.mb-3 健康相談会
-        h2.h3.mb-lg-5.mb-4.text-muted なんとかしたほうが良いかなあと思うこともあるけれど
+        h1.display-4.mb-lg-4.mb-3 セッション
+        h2.fs-6.mb-lg-5.mb-4.text-muted なんとかしたほうが良いかなあと思うこともあるけれど
       .col-lg-8.col-md-7.order-md-2.order-1.mb-md-0.mb-grid-gutter
         <!-- lottie-player(src='https://assets3.lottiefiles.com/private_files/lf30_KTzaOr.json'  background='transparent'  speed='1' loop autoplay).w-100.h-100 -->
         img(src="img/user/homeopathy/IMG_7037.jpg" alt="健康相談会").rounded-3
@@ -60,10 +31,10 @@ block content
     .container.my-2.my-md-0
       .row.align-items-center
         .col-md-5.mb-md-0.mb-5.pb-md-0.pb-3
-          img(src='img/demo/personal-portfolio/services/illustration.svg' alt='Illustration').d-block.mx-md-0.mx-auto
+          img(src='img/user/illustration/health.svg' alt='Illustration').d-block.mx-md-0.mx-auto
         .col-lg-6.offset-lg-1.col-md-7.text-md-start.text-center
           div(style='max-width: 500px;').mx-md-0.mx-auto
-            h2.mb-md-5.mb-4 健康相談会
+            h2.mb-md-5.mb-4 セッション
 
             // Media item (Service)
             .d-md-flex.align-items-start.d-block.mb-4.pb-2
@@ -101,7 +72,7 @@ block content
             .d-md-flex.align-items-start.d-block.mb-4.pb-2
               p.h1.me-md-4.mb-md-0.mb-4 5.
               .ps-md-2
-                h3.h6.mb-2 健康相談会
+                h3.h6.mb-2 セッション
                 p.mb-0.fs-sm ご相談に応じてオリジナルレメディーやフラワーエッセンス、自然療法などを紹介します。 ホメオパシーならレメディー適用書を発行しますので、販売店でレメディーをご注文、ご購入ください。お支払い方法は、販売店によって異なりますのでご確認お願いします。
 
             // Media item (Service)
@@ -116,8 +87,12 @@ block content
         path(fill='currentColor', d='M3000,185.4V0H0v185.4C496.4,69.8,996.4,12,1500,12S2503.6,69.8,3000,185.4z')
 
 
-  //- Social template
+  //- フラワーエッセンスと自然療法
   include partials/user
+
+  //- Social template
+  include partials/usersocials
+
 
 //- Footer
 block footer

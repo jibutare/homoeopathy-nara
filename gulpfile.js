@@ -3,7 +3,7 @@ const gulp = require('gulp'),
       gulpif = require('gulp-if'),
       del = require('del'),
       rename = require('gulp-rename'),
-      sass = require('gulp-sass'),
+      sass = require('gulp-sass')(require('sass')),
       pug = require('gulp-pug'),
       autoprefixer = require('gulp-autoprefixer'),
       sourcemaps = require('gulp-sourcemaps'),
@@ -38,7 +38,7 @@ gulp.task('sass:expanded', () => {
     precision: 10 // rounding of css color values, etc..
   };
   return gulp.src(path.src_scss + '/theme.scss')
-    .pipe(sass(options).on('error', sass.logError))
+    .pipe(sass.sync(options).on('error', sass.logError))
     .pipe(autoprefixer({
       cascade: false
     }))
@@ -54,7 +54,7 @@ gulp.task('sass:minified', () => {
   };
   return gulp.src(path.src_scss + '/theme.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass(options).on('error', sass.logError))
+    .pipe(sass.sync(options).on('error', sass.logError))
     .pipe(autoprefixer({
       cascade: false
     }))
@@ -82,7 +82,7 @@ gulp.task('js:expanded', () => {
          * Theme core scripts
          * 
          * @author Createx Studio
-         * @version 2.0.0
+         * @version 2.4.0
          */
         `
       }
@@ -108,7 +108,7 @@ gulp.task('js:minified', () => {
          * Theme core scripts
          * 
          * @author Createx Studio
-         * @version 2.0.0
+         * @version 2.4.0
          */
         `
       }

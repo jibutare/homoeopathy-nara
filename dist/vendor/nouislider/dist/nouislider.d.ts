@@ -36,8 +36,11 @@ interface CssClasses {
     valueLarge: string;
     valueSub: string;
 }
-interface Formatter {
+export interface PartialFormatter {
     to: (value: number) => string | number;
+    from?: (value: string) => number | false;
+}
+export interface Formatter extends PartialFormatter {
     from: (value: string) => number | false;
 }
 export declare enum PipsMode {
@@ -64,7 +67,7 @@ interface BasePips {
     mode: PipsMode;
     density?: number;
     filter?: PipsFilter;
-    format?: Formatter;
+    format?: PartialFormatter;
 }
 interface PositionsPips extends BasePips {
     mode: PipsMode.Positions;
@@ -89,6 +92,9 @@ interface RangePips extends BasePips {
 }
 declare type Pips = PositionsPips | ValuesPips | CountPips | StepsPips | RangePips;
 declare type StartValues = string | number | (string | number)[];
+declare type HandleAttributes = {
+    [key: string]: string;
+};
 interface UpdatableOptions {
     range?: Range;
     start?: StartValues;
@@ -99,7 +105,7 @@ interface UpdatableOptions {
     step?: number;
     pips?: Pips;
     format?: Formatter;
-    tooltips?: boolean | Formatter | (boolean | Formatter)[];
+    tooltips?: boolean | PartialFormatter | (boolean | PartialFormatter)[];
     animate?: boolean;
 }
 export interface Options extends UpdatableOptions {
@@ -110,19 +116,21 @@ export interface Options extends UpdatableOptions {
     behaviour?: string;
     keyboardSupport?: boolean;
     keyboardPageMultiplier?: number;
+    keyboardMultiplier?: number;
     keyboardDefaultStep?: number;
     documentElement?: HTMLElement;
     cssPrefix?: string;
     cssClasses?: CssClasses;
-    ariaFormat?: Formatter;
+    ariaFormat?: PartialFormatter;
     animationDuration?: number;
+    handleAttributes?: HandleAttributes[];
 }
 export interface API {
     destroy: () => void;
     steps: () => NextStepsForHandle[];
     on: (eventName: string, callback: EventCallback) => void;
     off: (eventName: string) => void;
-    get: () => GetResult;
+    get: (unencoded?: boolean) => GetResult;
     set: (input: number | string | (number | string)[], fireSetEvent?: boolean, exactInput?: boolean) => void;
     setHandle: (handleNumber: number, value: number | string, fireSetEvent?: boolean, exactInput?: boolean) => void;
     reset: (fireSetEvent?: boolean) => void;
@@ -172,6 +180,7 @@ declare class Spectrum {
     getDefaultStep(value: number, isDown: boolean, size: number): number;
     getNearbySteps(value: number): NearBySteps;
     countStepDecimals(): number;
+    hasNoSize(): boolean;
     convert(value: number): number;
     private handleEntryPoint;
     private handleStepPoint;

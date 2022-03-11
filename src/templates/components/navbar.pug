@@ -6,8 +6,8 @@ append config
   - var vendorScripts = ['prismjs/components/prism-core.min.js', 'prismjs/components/prism-markup.min.js', 'prismjs/components/prism-clike.min.js', 'prismjs/components/prism-javascript.min.js', 'prismjs/components/prism-pug.min.js', 'prismjs/plugins/toolbar/prism-toolbar.min.js', 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js', 'prismjs/plugins/line-numbers/prism-line-numbers.min.js']
   - var pageTitle = 'Navbar'
   - var pageSubtitle = 'Responsive navigation header that includes support for branding, navigation, and more.'
-  - var pageTitleLink = {'title': 'Bootstrap docs', 'link': 'https://getbootstrap.com/docs/5.0/components/navbar/'}
-  - var anchorNav = [{'title': 'Basic example', 'link': '#navbar-basic'}, {'title': 'Color schemes', 'link': '#navbar-color-schemes'}, {'title': 'Topbar', 'link': '#navbar-topbar'}, {'title': 'Topbar + Navbar', 'link': '#navbar-twolevel'}]
+  - var pageTitleLink = {'title': 'Bootstrap docs', 'link': 'https://getbootstrap.com/docs/5.1/components/navbar/'}
+  - var anchorNav = [{'title': 'Basic example', 'link': '#navbar-basic'}, {'title': 'Color schemes', 'link': '#navbar-color-schemes'}, {'title': 'Topbar', 'link': '#navbar-topbar'}, {'title': 'Topbar + Navbar', 'link': '#navbar-twolevel'}, {'title': 'Offcanvas mobile menu', 'link': '#navbar-offcanvas'}]
   
 //- Page Content
 block content
@@ -918,3 +918,122 @@ block content
                   .navbar.navbar-expand-lg.navbar-light.bg-light.navbar-shadow
                     .container.d-md-flex.align-items-center.px-0.px-xl-3
                       | ...
+
+  // Offcanvas mobile menu
+  section#navbar-offcanvas.pb-5.mb-md-2
+    h2.h4.mb-3 Offcanvas mobile menu
+    .card.border-0.shadow-lg
+      .card-header
+        ul(role='tablist').nav.nav-tabs.card-header-tabs
+          li.nav-item
+            a(href='#result5' data-bs-toggle='tab' role='tab' aria-controls='result5' aria-selected='true').nav-link.active Result
+          li.nav-item
+            a(href='#html5' data-bs-toggle='tab' role='tab' aria-controls='html5' aria-selected='false').nav-link HTML
+          li.nav-item
+            a(href='#pug5' data-bs-toggle='tab' role='tab' aria-controls='pug5' aria-selected='false').nav-link Pug
+      .card-body
+        .tab-content.py-1
+          #result5.tab-pane.fade.show.active(role='tabpanel')
+            iframe.w-100.shadow.mt-2(src='navbar-offcanvas.html' height='500' style='max-width: 360px;')
+          #html5.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-html').
+                &lt;!-- Offcanvas mobile menu example --&gt;
+                &lt;header class=&quot;header navbar navbar-expand-lg navbar-light bg-light navbar-shadow navbar-sticky&quot; data-scroll-header data-fixed-element&gt;
+                  &lt;div class=&quot;container px-0 px-xl-3&quot;&gt;
+                    &lt;a class=&quot;navbar-brand flex-shrink-0 pe-lg-2 me-lg-4&quot; href=&quot;index.html&quot;&gt;
+                      &lt;img src=&quot;path-to-logo-image&quot; width=&quot;logo-width-in-pixels&quot; alt=&quot;Logo&quot;&gt;
+                    &lt;/a&gt;
+                    &lt;button class=&quot;navbar-toggler me-n2 me-2&quot; type=&quot;button&quot; data-bs-toggle=&quot;offcanvas&quot; data-bs-target=&quot;#primaryMenu&quot;&gt;
+                      &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+                    &lt;/button&gt;
+                    &lt;div class=&quot;offcanvas offcanvas-collapse offcanvas-end&quot; id=&quot;primaryMenu&quot;&gt;
+                      &lt;div class=&quot;offcanvas-header navbar-shadow&quot;&gt;
+                        &lt;h5 class=&quot;mt-1 mb-0&quot;&gt;Menu&lt;/h5&gt;
+                        &lt;button class=&quot;btn-close lead&quot; type=&quot;button&quot; data-bs-dismiss=&quot;offcanvas&quot; aria-label=&quot;Close&quot;&gt;&lt;/button&gt;
+                      &lt;/div&gt;
+                      &lt;div class=&quot;offcanvas-body&quot;&gt;
+                        &lt;ul class=&quot;navbar-nav&quot;&gt;
+                          &lt;li class=&quot;nav-item active&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Link&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;nav-item dropdown&quot;&gt;
+                            &lt;a class=&quot;nav-link dropdown-toggle&quot; href=&quot;#&quot; data-bs-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;
+                            &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                              &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Action link&lt;/a&gt;&lt;/li&gt;
+                              &lt;li class=&quot;dropdown&quot;&gt;
+                                &lt;a class=&quot;dropdown-item dropdown-toggle&quot; href=&quot;#&quot; data-bs-toggle=&quot;dropdown&quot;&gt;Dropdown&lt;/a&gt;
+                                &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                                  &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Action link&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Yet another link&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                              &lt;/li&gt;
+                              &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+                              &lt;li class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
+                              &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                          &lt;/li&gt;
+                          &lt;li class=&quot;nav-item&quot;&gt;
+                            &lt;a class=&quot;nav-link disabled&quot; href=&quot;#&quot; tabindex=&quot;-1&quot; aria-disabled=&quot;true&quot;&gt;Disabled&lt;/a&gt;
+                          &lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/div&gt;
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+                &lt;/header&gt;
+          #pug5.tab-pane.fade(role='tabpanel')
+            pre.line-numbers
+              code(class='lang-pug').
+                // Offcanvas mobile menu example
+                header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-shadow.navbar-sticky(data-scroll-header, data-fixed-element)
+                  .container.px-0.px-xl-3
+                    a(href=&quot;#&quot;).navbar-brand.flex-shrink-0.pe-lg-2.me-lg-4
+                      img(src=&quot;path-to-logo-image&quot; width=&quot;logo-width-in-pixels&quot; alt=&quot;Logo&quot;)
+                    button(type=&quot;button&quot;, data-bs-toggle=&quot;offcanvas&quot;, data-bs-target=&quot;#primaryMenu&quot;).navbar-toggler.me-n2.me-2
+                      span.navbar-toggler-icon
+                    #primaryMenu.offcanvas.offcanvas-collapse.offcanvas-end
+                      .offcanvas-header.navbar-shadow
+                        h5.mt-1.mb-0 Menu
+                        button(type=&quot;button&quot;, data-bs-dismiss=&quot;offcanvas&quot;, aria-label=&quot;Close&quot;).btn-close.lead
+                      .offcanvas-body
+                        ul.navbar-nav
+                          li.nav-item.active
+                            a(href=&quot;#&quot;).nav-link
+                              | Home
+                          li.nav-item
+                            a(href=&quot;#&quot;).nav-link
+                              | Link
+                          li.nav-item.dropdown
+                            a(href=&quot;#&quot;, data-bs-toggle=&quot;dropdown&quot;).nav-link.dropdown-toggle
+                              | Dropdown
+                            ul.dropdown-menu
+                              li
+                                a(href=&quot;#&quot;).dropdown-item
+                                  | Action link
+                              li.dropdown
+                                a(href=&quot;#&quot;, data-bs-toggle=&quot;dropdown&quot;).dropdown-item.dropdown-toggle
+                                  | Dropdown
+                                ul.dropdown-menu
+                                  li
+                                    a(href=&quot;#&quot;).dropdown-item
+                                      | Action link
+                                  li
+                                    a(href=&quot;#&quot;).dropdown-item
+                                      | Another action
+                                  li
+                                    a(href=&quot;#&quot;).dropdown-item
+                                      | Something else here
+                                  li
+                                    a(href=&quot;#&quot;).dropdown-item
+                                      | Yet another link
+                              li
+                                a(href=&quot;#&quot;).dropdown-item
+                                  | Another action
+                              li.dropdown-divider 
+                              li
+                                a(href=&quot;#&quot;).dropdown-item
+                                  | Something else here
+                          li.nav-item
+                            a(href=&quot;#&quot;, tabindex=&quot;-1&quot;, aria-disabled=&quot;true&quot;).nav-link.disabled
+                              | Disabled

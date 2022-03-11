@@ -2,8 +2,8 @@ extends ../partials/layout-components
 
 //- Override default config variables
 append config
-  - var vendorStyles = ['prismjs/themes/prism.css', 'prismjs/plugins/toolbar/prism-toolbar.css', 'prismjs/plugins/line-numbers/prism-line-numbers.css', 'nouislider/distribute/nouislider.min.css', 'tiny-slider/dist/tiny-slider.css']
-  - var vendorScripts = ['prismjs/components/prism-core.min.js', 'prismjs/components/prism-markup.min.js', 'prismjs/components/prism-clike.min.js', 'prismjs/components/prism-javascript.min.js', 'prismjs/components/prism-pug.min.js', 'prismjs/plugins/toolbar/prism-toolbar.min.js', 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js', 'prismjs/plugins/line-numbers/prism-line-numbers.min.js', 'nouislider/distribute/nouislider.min.js', 'tiny-slider/dist/min/tiny-slider.js']
+  - var vendorStyles = ['prismjs/themes/prism.css', 'prismjs/plugins/toolbar/prism-toolbar.css', 'prismjs/plugins/line-numbers/prism-line-numbers.css', 'nouislider/dist/nouislider.min.css', 'tiny-slider/dist/tiny-slider.css']
+  - var vendorScripts = ['prismjs/components/prism-core.min.js', 'prismjs/components/prism-markup.min.js', 'prismjs/components/prism-clike.min.js', 'prismjs/components/prism-javascript.min.js', 'prismjs/components/prism-pug.min.js', 'prismjs/plugins/toolbar/prism-toolbar.min.js', 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js', 'prismjs/plugins/line-numbers/prism-line-numbers.min.js', 'nouislider/dist/nouislider.min.js', 'tiny-slider/dist/min/tiny-slider.js']
   - var pageTitle = 'Widgets'
   - var pageSubtitle = 'Collection of tiny components to use inside sidebar area.'
   - var isPageTitleBadge = true
@@ -15,7 +15,7 @@ block content
   .alert.alert-info.mb-5(role='alert')
     .d-flex.py-2
       i.ai-alert-circle.fs-xl.me-2.me-sm-3
-      p.text-break.fs-md.mb-0 <strong>Range slider</strong> widget depends on <strong>noUISlider plugin</strong>. Make sure to link to <strong>noUISlider css and js</strong> files in your document: <strong>vendor/nouislider/distribute/nouislider.min.css</strong> and <strong>vendor/nouislider/distribute/nouislider.min.js</strong>. Use this page as a reference.
+      p.text-break.fs-md.mb-0 <strong>Range slider</strong> widget depends on <strong>noUISlider plugin</strong>. Make sure to link to <strong>noUISlider css and js</strong> files in your document: <strong>vendor/nouislider/dist/nouislider.min.css</strong> and <strong>vendor/nouislider/dist/nouislider.min.js</strong>. Use this page as a reference.
 
   // Links
   section#widget-links.pb-5.mb-md-2

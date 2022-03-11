@@ -10,36 +10,7 @@ append config
 
 //- Navbar + Contact modal
 block navbar
-
-  // Navbar (Solid background + shadow)
-  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
-  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
-    .navbar-search.bg-light
-      .container.d-flex.flex-nowrap.align-items-center
-        i.ai-search.fs-xl
-        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
-        .d-flex.align-items-center
-          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
-          button(type='button' data-bs-toggle='search').btn-close.p-2
-    .container.px-0.px-xl-3
-      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
-        span.navbar-toggler-icon
-      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
-        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
-        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
-      .d-flex.align-items-center.order-lg-3.ms-lg-auto
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none ご予約のスケジュール
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block ご予約のスケジュール
-      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
-        .offcanvas-header.navbar-shadow
-          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
-          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
-        .offcanvas-body
-          //- partial/menu-primary
-          include partials/menu-primary
-        .offcanvas-footer
-          a(href='https://ws.formzu.net/fgen/S80736128/' target='_blank').btn.d-block.w-100.btn-primary お問い合わせ
-
+  include partials/navbar-solid
 
 //- Page Content
 block content
@@ -49,14 +20,14 @@ block content
     .row.align-items-center
       .col-lg-4.col-md-5.order-md-1.order-2.text-md-start.text-center
         h1.display-4.mb-lg-4.mb-3 ホメオパシー
-        h2.h3.mb-lg-5.mb-4.text-muted 似たようなものが、似たようなものを癒す
+        h2.fs-6.mb-lg-5.mb-4.text-muted 似たようなものが、似たようなものを癒す
       .col-lg-8.col-md-7.order-md-2.order-1.mb-md-0.mb-grid-gutter
         <!-- lottie-player(src='https://assets4.lottiefiles.com/packages/lf20_0xllbqad.json'  background='transparent'  speed='1' loop autoplay).w-100.h-100-->
         img(src="img/user/homeopathy/photo_01.jpg" alt="ホメオパシー").rounded-3
 
   // About
   // Horizontal card layout
-  section.container
+  section.container.py-5.py-md-6
     .card.card-horizontal
       .card-img-top(style="background-image: url('img/user/homeopathy/DSC_0233.jpg');")
       .card-body
@@ -67,9 +38,45 @@ block content
         a(href="https://ameblo.jp/essence-yumi/entry-12374976434.html" target='_blank').btn.btn-sm.btn-primary
           | ホメオパシーが向かないかもしれない場合
 
+  // ホメオパシーとフラワーエッセンス
+  section.bg-faded-primary.position-relative.py-5.py-md-6
+    .container.my-2.my-md-0
+      .row.align-items-center
+        .col-12.col-md-8.mx-auto.mb-md-0.mb-5.pb-md-0.pb-3
+
+          h3.pb-4 ホメオパシーとフラワーエッセンスのセッションとはどんなものですか?
+
+          p.pb-4 わかるようなわからないような言葉にも思えますが「セッション」と表現しています。以前は「健康相談会」と言っていましたが、こう書くと「健康」の定義からしなければならないし、「健康、病気」という対比も生まれてしまうのでちょっと不都合がありました。ここでいうセッションとは、「お互いに話し、氣づき、見つけていくプロセス」と考えていただけたらと思います。セッションは次のようになります。
+
+          // Card layout
+          .card.border-warning
+            .card-header.border-warning
+              | セッション
+            .card-body
+              h4.fs-6.card-title プログラム
+              ul.card-text.fs-sm
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-warning.fs-xl.mt-1.me-3
+                  span 話をする(問診票の記入もします)
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-warning.fs-xl.mt-1.me-3
+                  span 症状や感情を手がかりにして、レメディーやフラワーエッセンスを選ぶ(これはこちらの仕事です)
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-warning.fs-xl.mt-1.me-3
+                  span 選ばれたレメディーやフラワーエッセンスを継続してとります。約1ヶ月心身の変化を観察しながら過ごしてください。
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-warning.fs-xl.mt-1.me-3
+                  span 1ヶ月半〜2ヶ月後に次のセッションを行います。変化や気づきをお話しください。新たにレメディーやフラワーエッセンスを選びます。
+
+    .shape.shape-top.shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 3000 185.4')
+        path(fill='currentColor', d='M3000,185.4V0H0v185.4C496.4,69.8,996.4,12,1500,12S2503.6,69.8,3000,185.4z')
+
   //- フラワーエッセンスと自然療法
   include partials/user
 
+  //- Social template
+  include partials/usersocials
 
 //- Footer
 block footer
