@@ -10,36 +10,7 @@ append config
 
 //- Navbar + Contact modal
 block navbar
-
-  // Navbar (Solid background + shadow)
-  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
-  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
-    .navbar-search.bg-light
-      .container.d-flex.flex-nowrap.align-items-center
-        i.ai-search.fs-xl
-        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
-        .d-flex.align-items-center
-          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
-          button(type='button' data-bs-toggle='search').btn-close.p-2
-    .container.px-0.px-xl-3
-      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
-        span.navbar-toggler-icon
-      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
-        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
-        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
-      .d-flex.align-items-center.order-lg-3.ms-lg-auto
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none ご予約のスケジュール
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block ご予約のスケジュール
-      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
-        .offcanvas-header.navbar-shadow
-          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
-          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
-        .offcanvas-body
-          //- partial/menu-primary
-          include partials/menu-primary
-        .offcanvas-footer
-          a(href='https://ws.formzu.net/fgen/S80736128/' target='_blank').btn.d-block.w-100.btn-primary お問い合わせ
-
+  include partials/navbar-solid
 
 //- Page Content
 block content
@@ -48,8 +19,8 @@ block content
   section.container.mb-3.my-md-0.py-5.py-md-6
     .row.align-items-center
       .col-lg-4.col-md-5.order-md-1.order-2.text-md-start.text-center
-        h1.display-4.mb-lg-4.mb-3 相談料
-        h2.h3.mb-lg-5.mb-4.text-muted 大人と子供にわかれています
+        h1.display-4.mb-lg-4.mb-3 料金
+        h2.fs-6.mb-lg-5.mb-4.text-muted セッションのメニューと料金
         .text-nowrap
           a(href='https://ameblo.jp/essence-yumi/' target='blank').btn.btn-outline-primary
             i.ai-calendar.mt-n1.me-2
@@ -61,114 +32,99 @@ block content
 
   // Pricing
   section.container.mb-3.mt-4.py-5.my-md-0.pt-md-7.pb-md-6
-    h2.text-center.mb-5 大人
-    .d-flex.align-items-center.justify-content-center.border.rounded.mx-auto.mb-5.py-3.px-5(style='max-width: 375px;')
+    h2.text-center.mb-5
       i.ai-arrow-up.lead.text-primary.p-2
-      h5.p-2.mb-0 12歳以上
+      | 12歳以上
     .row
-      .col-lg-4.col-sm-6.mb-grid-gutter
+      .col-lg-6.col-sm-6.mb-grid-gutter
         .card.border-0.shadow.w-100
-          .card-img-top.bg-secondary.text-center.py-5.px-grid-gutter
-            h3.text-body.mb-0 健康相談会
+          .card-img-top.bg-warning.text-center.py-5.px-grid-gutter
+            h3.text-light.mb-0 ヒノ香のセッション
           .card-body.px-grid-gutter.py-grid-gutter
             .d-flex.align-items-end.py-2.px-4.mb-4
               span.h2.fw-normal.text-muted.mb-1.me-2 ¥
-              span.price.display-2.fw-normal.text-primary.px-1.me-2 17,500
+              span.price.display-2.fw-normal.text-primary.px-1.me-2 15,400
               span.h3.fs-lg.fw-medium.text-muted.mb-2 税込
             ul.list-unstyled.py-2.mb-4
               li.d-flex.align-items-center.mb-3
                 i.ai-check.fs-xl.text-primary.me-2
-                span 80分/1回
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。
+                span ホメオパシーとフラワーエッセンス
+            // はじめて受けるとき
             .text-center.mb-2
-              a(href='https://ameblo.jp/essence-yumi/entry-12374976434.html' target='blank').btn.btn-outline-primary 初めて受けるとき
-      .col-lg-4.col-sm-6.mb-grid-gutter
+              a(href='https://ameblo.jp/essence-yumi/entry-12374976434.html' target='blank').btn.btn-outline-warning 初めて受けるとき
+      .col-lg-6.col-sm-6.mb-grid-gutter
         .card.border-0.shadow.w-100
-          .card-img-top.bg-secondary.text-center.py-5.px-grid-gutter
-            h3.text-body.mb-0 ホメオパシーのみ
+          .card-img-top.bg-warning.text-center.py-5.px-grid-gutter
+            h3.text-light.mb-0 ホメオパシー&nbsp;
+              span.fs-5 または
+              | フラワーエッセンス&nbsp;
+              span.fs-5 のみ
           .card-body.px-grid-gutter.py-grid-gutter
             .d-flex.align-items-end.py-2.px-4.mb-4
               span.h2.fw-normal.text-muted.mb-1.me-2 ¥
               span.price.display-2.fw-normal.text-primary.px-1.me-2 11,000
               span.h3.fs-lg.fw-medium.text-muted.mb-2 税込
-            ul.list-unstyled.py-2.mb-4
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 60分/1回
-      .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.border-0.shadow.w-100
-          .card-img-top.bg-secondary.text-center.py-5.px-grid-gutter
-            h3.text-body.mb-0 フラワーエッセンスのみ
-          .card-body.px-grid-gutter.py-grid-gutter
-            .d-flex.align-items-end.py-2.px-4.mb-4
-              span.h2.fw-normal.text-muted.mb-1.me-2 ¥
-              span.price.display-2.fw-normal.text-primary.px-1.me-2 12,000
-              span.h3.fs-lg.fw-medium.text-muted.mb-2 税込
-            ul.list-unstyled.py-2.mb-4
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 60分/1回
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。
 
   // Pricing
   section.container.mb-3.mt-4.py-5.my-md-0.pt-md-7.pb-md-6
-    h2.text-center.mb-5 子供
-    .d-flex.align-items-center.justify-content-center.border.rounded.mx-auto.mb-5.py-3.px-5(style='max-width: 375px;')
+    h2.text-center.mb-5
       i.ai-arrow-down.lead.text-primary.p-2
-      h5.p-2.mb-0 11歳以下
+      | 11歳以下のお子さま
     .row
       .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.border-0.shadow.w-100
-          .card-img-top.bg-secondary.text-center.py-5.px-grid-gutter
-            h3.text-body.mb-0 こども健康相談会
+        .card.w-100
+          .card-img-top.bg-faded-danger.text-center.py-5.px-grid-gutter
+            h3.fs-5.text-body.mb-0  ホメオパシーとフラワーエッセンス
           .card-body.px-grid-gutter.py-grid-gutter
             .d-flex.align-items-end.py-2.px-4.mb-4
               span.h2.fw-normal.text-muted.mb-1.me-2 ¥
-              span.price.display-2.fw-normal.text-primary.px-1.me-2 12,000
+              span.price.display-2.fw-normal.text-primary.px-1.me-2 11,000
               span.h3.fs-lg.fw-medium.text-muted.mb-2 税込
-            ul.list-unstyled.py-2.mb-4
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 80分/1回
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。
       .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.border-0.shadow.w-100
-          .card-img-top.bg-secondary.text-center.py-5.px-grid-gutter
-            h3.text-body.mb-0 ホメオパシーのみ
+        .card.w-100
+          .card-img-top.bg-faded-danger.text-center.py-5.px-grid-gutter
+            h3.fs-5.text-body.mb-0 ホメオパシーこども健康相談会
           .card-body.px-grid-gutter.py-grid-gutter
             .d-flex.align-items-end.py-2.px-4.mb-4
               span.h2.fw-normal.text-muted.mb-1.me-2 ¥
               span.price.display-2.fw-normal.text-primary.px-1.me-2 8,800
               span.h3.fs-lg.fw-medium.text-muted.mb-2 税込
-            ul.list-unstyled.py-2.mb-4
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 60分/1回
       .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.border-0.shadow.w-100
-          .card-img-top.bg-secondary.text-center.py-5.px-grid-gutter
-            h3.text-body.mb-0 フラワーエッセンスのみ
+        .card.w-100
+          .card-img-top.bg-faded-danger.text-center.py-5.px-grid-gutter
+            h3.fs-5.text-body.mb-0 フラワーエッセンスのみ
           .card-body.px-grid-gutter.py-grid-gutter
             .d-flex.align-items-end.py-2.px-4.mb-4
               span.h2.fw-normal.text-muted.mb-1.me-2 ¥
-              span.price.display-2.fw-normal.text-primary.px-1.me-2 9,800
+              span.price.display-2.fw-normal.text-primary.px-1.me-2 8,800
               span.h3.fs-lg.fw-medium.text-muted.mb-2 税込
-            ul.list-unstyled.py-2.mb-4
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 60分/1回
-              li.d-flex.align-items-center.mb-3
-                i.ai-check.fs-xl.text-primary.me-2
-                span 対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。
+
+  // 別途費用
+  section.bg-info.py-7
+    .container
+      .row
+        .col-lg-6.mx-auto
+          .card.border-warning
+            .card-header.border-warning
+              | セッション料金のほかに必要な費用
+            .card-body
+              ul.card-text.fs-sm
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-warning.fs-xl.mt-1.me-3
+                  span ホメオパシーのレメディー代金が別途必要です。
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-warning.fs-xl.mt-1.me-3
+                  span ヒノ香では販売していませんのでよろしければ代行発注をさせていただき、レメディーショップからのお届けになります。
+                li.d-flex.mb-2.pb-1
+                  i.ai-check-circle.text-warning.fs-xl.mt-1.me-3
+                  span zoomのフラワーエッセンスセッションの場合、フラワーエッセンスのボトルは発送になるので、送料660円がかかります。
+
+  //- フラワーエッセンスと自然療法
+  include partials/user
 
   //- Social template
-  include partials/user
+  include partials/usersocials
+
 
 //- Footer
 block footer

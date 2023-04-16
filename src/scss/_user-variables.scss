@@ -9,12 +9,34 @@
 
 // Brand colors
 // Brand colors
-$primary:               #A9BF04 !default;
-$info:		              #93A603 !default;
-$success:               #667302 !default;
-$warning:               #F2EAC2 !default;
-$danger:                #A68A81 !default;
+$primary:               #F2B705 !default;
+$info:		              #D8F2F2 !default;
+$success:               #F2D027 !default;
+$warning:               #72A69C !default;
+$danger:                #F29F05 !default;
 
 $line-height-base:            1.8 !default;
 $spacer: 1.25rem !default;
 $paragraph-margin-bottom:     ($spacer * 2) !default;
+
+
+/* Color Theme Swatches in Hex */
+$Blue-banner-with-mimosa-branch-for-spring-holidays-1-hex: #D8F2F2;
+$Blue-banner-with-mimosa-branch-for-spring-holidays-2-hex: #72A69C;
+$Blue-banner-with-mimosa-branch-for-spring-holidays-3-hex: #F2D027;
+$Blue-banner-with-mimosa-branch-for-spring-holidays-4-hex: #F2B705;
+$Blue-banner-with-mimosa-branch-for-spring-holidays-5-hex: #F29F05;
+
+/* Color Theme Swatches in RGBA */
+$Blue-banner-with-mimosa-branch-for-spring-holidays-1-rgba: rgba(215,242,242, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-2-rgba: rgba(114,165,156, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-3-rgba: rgba(242,208,38, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-4-rgba: rgba(242,182,4, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-5-rgba: rgba(242,159,4, 1);
+
+/* Color Theme Swatches in HSLA */
+$Blue-banner-with-mimosa-branch-for-spring-holidays-1-hsla: hsla(180, 51, 89, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-2-hsla: hsla(168, 22, 54, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-3-hsla: hsla(50, 88, 55, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-4-hsla: hsla(45, 96, 48, 1);
+$Blue-banner-with-mimosa-branch-for-spring-holidays-5-hsla: hsla(39, 96, 48, 1);

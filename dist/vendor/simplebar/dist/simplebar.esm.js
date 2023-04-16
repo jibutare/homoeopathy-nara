@@ -1,5 +1,5 @@
 /**
- * SimpleBar.js - v5.3.4
+ * SimpleBar.js - v5.3.5
  * Scrollbars, simpler.
  * https://grsmto.github.io/simplebar/
  *
@@ -958,21 +958,21 @@ SimpleBar.handleMutations = function (mutations) {
     Array.prototype.forEach.call(mutation.addedNodes, function (addedNode) {
       if (addedNode.nodeType === 1) {
         if (addedNode.hasAttribute('data-simplebar')) {
-          !SimpleBar.instances.has(addedNode) && new SimpleBar(addedNode, getOptions(addedNode.attributes));
+          !SimpleBar.instances.has(addedNode) && document.documentElement.contains(addedNode) && new SimpleBar(addedNode, getOptions(addedNode.attributes));
         } else {
           Array.prototype.forEach.call(addedNode.querySelectorAll('[data-simplebar]'), function (el) {
-            if (el.getAttribute('data-simplebar') !== 'init' && !SimpleBar.instances.has(el)) new SimpleBar(el, getOptions(el.attributes));
+            if (el.getAttribute('data-simplebar') !== 'init' && !SimpleBar.instances.has(el) && document.documentElement.contains(el)) new SimpleBar(el, getOptions(el.attributes));
           });
         }
       }
     });
     Array.prototype.forEach.call(mutation.removedNodes, function (removedNode) {
       if (removedNode.nodeType === 1) {
-        if (removedNode.hasAttribute('[data-simplebar="init"]')) {
-          SimpleBar.instances.has(removedNode) && SimpleBar.instances.get(removedNode).unMount();
+        if (removedNode.getAttribute('data-simplebar') === 'init') {
+          SimpleBar.instances.has(removedNode) && !document.documentElement.contains(removedNode) && SimpleBar.instances.get(removedNode).unMount();
         } else {
           Array.prototype.forEach.call(removedNode.querySelectorAll('[data-simplebar="init"]'), function (el) {
-            SimpleBar.instances.has(el) && SimpleBar.instances.get(el).unMount();
+            SimpleBar.instances.has(el) && !document.documentElement.contains(el) && SimpleBar.instances.get(el).unMount();
           });
         }
       }

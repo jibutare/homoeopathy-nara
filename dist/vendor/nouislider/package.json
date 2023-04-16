@@ -1,34 +1,36 @@
 {
-  "_from": "nouislider@15.2.0",
-  "_id": "nouislider@15.2.0",
+  "_args": [
+    [
+      "nouislider@15.4.0",
+      "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp"
+    ]
+  ],
+  "_from": "nouislider@15.4.0",
+  "_id": "nouislider@15.4.0",
   "_inBundle": false,
-  "_integrity": "sha512-LoZwN+wwU+z/0/UtjQY8VUcVElFJX6GfHkgJ5z1NIt/+KpOsjxEW4EAtBkBWvHNxf9HBzR62K6ft9NpNBkA5/w==",
+  "_integrity": "sha512-AV7UMhGhZ4Mj6ToMT812Ib8OJ4tAXR2/Um7C4l4ZvvsqujF0WpQTpqqHJ+9xt4174R7ueQOUrBR4yakJpAIPCA==",
   "_location": "/nouislider",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "nouislider@15.2.0",
+    "raw": "nouislider@15.4.0",
     "name": "nouislider",
     "escapedName": "nouislider",
-    "rawSpec": "15.2.0",
+    "rawSpec": "15.4.0",
     "saveSpec": null,
-    "fetchSpec": "15.2.0"
+    "fetchSpec": "15.4.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nouislider/-/nouislider-15.2.0.tgz",
-  "_shasum": "21d6c94b34c70fe8097c3806f5e48eaa97332bd9",
-  "_spec": "nouislider@15.2.0",
-  "_where": "/home/masaaki/git/src/github/homoeopathy-nara.jp",
+  "_resolved": "https://registry.npmjs.org/nouislider/-/nouislider-15.4.0.tgz",
+  "_spec": "15.4.0",
+  "_where": "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp",
   "bugs": {
     "url": "https://github.com/leongersen/noUiSlider/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {},
-  "deprecated": false,
   "description": "noUiSlider is a lightweight JavaScript range slider.",
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.20.0",
@@ -55,10 +57,12 @@
     "url": "git://github.com/leongersen/noUiSlider.git"
   },
   "scripts": {
-    "build": "npm run build:js && npm run build:types && npm run build:styles",
-    "build:js": "npm run build:js:write && npm run build:js:compress",
+    "build": "npm run build:mjs && npm run build:js && npm run build:styles",
+    "build:js": "npm run build:js:write && npm run build:js:compress && npm run build:js:compress:mjs",
     "build:js:compress": "uglifyjs dist/nouislider.js --compress --mangle --output dist/nouislider.min.js",
+    "build:js:compress:mjs": "uglifyjs dist/nouislider.mjs --compress --mangle --output dist/nouislider.min.mjs",
     "build:js:write": "rollup -c rollup.config.js",
+    "build:mjs": "tsc --module ES6 && mv dist/nouislider.js dist/nouislider.mjs",
     "build:styles": "npm run build:styles:write && npm run build:styles:compress",
     "build:styles:compress": "lessc src/nouislider.less dist/nouislider.min.css --clean-css",
     "build:styles:write": "lessc src/nouislider.less dist/nouislider.css",
@@ -70,5 +74,5 @@
   },
   "style": "dist/nouislider.min.css",
   "types": "dist/nouislider.d.ts",
-  "version": "15.2.0"
+  "version": "15.4.0"
 }

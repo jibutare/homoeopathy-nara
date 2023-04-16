@@ -10,36 +10,7 @@ append config
 
 //- Navbar + Contact modal
 block navbar
-
-  // Navbar (Solid background + shadow)
-  // Remove "navbar-sticky" class to make navigation bar scrollable with the page.
-  header.header.navbar.navbar-expand-lg.navbar-light.bg-light.navbar-sticky
-    .navbar-search.bg-light
-      .container.d-flex.flex-nowrap.align-items-center
-        i.ai-search.fs-xl
-        input(type='text' placeholder='Search site').form-control.form-control-xl.navbar-search-field
-        .d-flex.align-items-center
-          span.text-muted.fs-xs.mt-1.d-none.d-sm-inline Close
-          button(type='button' data-bs-toggle='search').btn-close.p-2
-    .container.px-0.px-xl-3
-      button(type='button' data-bs-toggle='offcanvas' data-bs-target='#primaryMenu').navbar-toggler.ms-n2.me-2
-        span.navbar-toggler-icon
-      a(href='index.html').navbar-brand.flex-shrink-0.order-lg-1.mx-auto.ms-lg-0.pe-lg-2.me-lg-4
-        img(src='img/logo/logo-dark.png' alt='hinoka' width='153').d-none.d-lg-block
-        img(src='img/logo/logo-icon.png' alt='hinoka' width='58').d-lg-none
-      .d-flex.align-items-center.order-lg-3.ms-lg-auto
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-primary.d-lg-inline-block.d-none ご予約のスケジュール
-        a(href='https://ameblo.jp/essence-yumi/' target='_blank').btn.btn-sm.btn-primary.d-lg-none.d-inline-block ご予約のスケジュール
-      #primaryMenu.offcanvas.offcanvas-collapse.order-lg-2
-        .offcanvas-header.navbar-shadow
-          h6.mt-1.mb-0 <small>日本ホメオパシーセンター奈良 学園前</small>
-          button(type='button' data-bs-dismiss='offcanvas' aria-label='Close').btn-close.lead
-        .offcanvas-body
-          //- partial/menu-primary
-          include partials/menu-primary
-        .offcanvas-footer
-          a(href='https://ws.formzu.net/fgen/S80736128/' target='_blank').btn.d-block.w-100.btn-primary お問い合わせ
-
+  include partials/navbar-solid
 
 //- Page Content
 block content
@@ -48,12 +19,9 @@ block content
   section.container.mb-3.my-md-0.py-5.py-md-6
     .row.align-items-center
       .col-lg-4.col-md-5.order-md-1.order-2.text-md-start.text-center
-        h1.display-4.mb-lg-4.mb-3 ご予約<br>アクセス
-        h2.h3.mb-lg-5.mb-4.text-muted 奈良県奈良市
+        h1.display-4.mb-lg-4.mb-3 ご予約・アクセス
+        h2.fs-6.mb-lg-5.mb-4.text-muted 奈良県奈良市
         .text-nowrap
-          a(href='https://ws.formzu.net/fgen/S42789174/').btn.btn-translucent-primary.me-3
-            i.ai-mail.mt-n1.me-2
-            | ご予約
           a(href='https://ws.formzu.net/fgen/S80736128/' data-scroll).btn.btn-outline-primary
             i.ai-mail.mt-n1.me-2
             | お問い合わせ
@@ -63,26 +31,8 @@ block content
   // Contact cards (details)
   section.container-fluid.mb-5.mb-md-6
     .row
-      .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.h-100.border-0.shadow-lg.py-4
-          .card-body.text-center
-            i.ai-map-pin.mb-4.text-primary(style='font-size: 2.25rem;')
-            h3.h6.mb-2 バス亭「東登美ヶ丘1丁目西口」から徒歩約7分(600m)
-            p.fs-sm.mb-2 ご予約の際、当センターの詳細をご案内いたします。
-            a(href='#map' data-scroll).fancy-link.fs-sm
-              | 地図を見る
-      .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.h-100.border-0.shadow-lg.py-4
-          .card-body.text-center
-            i.ai-clock.mb-4.text-danger(style='font-size: 2.25rem;')
-            h3.h6.mb-2 営業日と営業時間
-            ul.list-unstyled.fs-sm.mb-0
-              li 月・火・金・土
-              li 11:00〜18:00
-              li 完全予約制
-              a(href='https://ameblo.jp/essence-yumi/').fancy-link.fs-sm ご予約のスケジュール
-      .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.h-100.border-0.shadow-lg.py-4
+      .col-lg-6.col-sm-6.mb-grid-gutter
+        .card.h-100.border-warning.py-4
           .card-body.text-center
             i.ai-mail.mb-4.text-warning(style='font-size: 2.25rem;')
             h3.h6.mb-2 ご予約
@@ -90,6 +40,42 @@ block content
               li
                 span.me-1 ご予約用フォーム:
                 a(href='https://ws.formzu.net/fgen/S42789174/').fancy-link.fs-sm 新規お申し込み
+              li 初回の受付はお電話でさせていただいておりますが、まずフォームに入力し送信してください。
+      .col-lg-6.col-sm-6.mb-grid-gutter
+        .card.h-100.border-warning.py-4
+          .card-body.text-center
+            i.ai-wechat.mb-4.text-warning(style='font-size: 2.25rem;')
+            h3.h6.mb-2 相談方法
+            p.fs-sm 対面, zoom, 電話 のいずれかお選びください。
+            p.fs-sm ご注意とお願い
+              br
+              | セッションルームには入りませんが犬と猫がいます。
+              br
+              | 動物の毛にアレルギーのある方は通信相談をご利用ください。
+
+      .col-lg-6.col-sm-6.mb-grid-gutter
+        .card.h-100.border-warning.py-4
+          .card-body.text-center
+            i.ai-clock.mb-4.text-warning(style='font-size: 2.25rem;')
+            h3.h6.mb-2 営業日と営業時間
+            ul.list-unstyled.fs-sm.mb-0
+              li 月・火・金・土
+              li 11:00〜18:00
+              li セッション枠 - 11:00〜 14:00〜 16:00〜
+            p.fs-sm
+              br
+              | *ご予約カレンダーでご確認ください。セッション内容で時間が前後する場合があります。
+            a(href='https://ameblo.jp/essence-yumi/').fancy-link.fs-sm ご予約のスケジュール
+      .col-lg-6.col-sm-6.mb-grid-gutter
+        .card.h-100.border-warning.py-4
+          .card-body.text-center
+            i.ai-map-pin.mb-4.text-warning(style='font-size: 2.25rem;')
+            h3.h6.mb-2 対面セッションの場所
+            p.fs-sm.mb-2 ご予約の際に詳しい場所をご案内します
+              br
+              | 奈良県奈良市東登美ヶ丘2丁目
+            a(href='#map' data-scroll).fancy-link.fs-sm
+              | 地図を見る
 
   // Map + Contact form
   section#map.border-top.mb-5.mb-md-6
@@ -98,65 +84,65 @@ block content
 
   // Contact cards (offices)
   section.container.mb-5.mb-md-6
-    h2.text-center.mb-4.pb-4 電車お越しの場合
+    h3.h2.text-center.mb-4.pb-4 電車お越しの場合
     .row
       .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.h-100.border-0.shadow.mx-auto
+        .card.h-100.mx-auto
           .card-body
             h5.card-title 近鉄奈良線 学園前駅 北改札口
-            p.card-text.fs-sm.text-muted 奈良交通 「学園前駅北1番のりば」
+            p.card-text.fs-sm 奈良交通 「学園前駅北1番のりば」
             ul.list-unstyled.mb-0
               li.d-flex.align-items-start.pb-3.border-bottom
                 i.ai-map-pin.fs-lg.mt-2.mb-0.text-primary
                 .ps-3
-                  span.fs-ms.text-muted 乗車
+                  span.fs-ms 乗車
                   .d-block.fs-sm 「系統11・高の原駅行き」
                     span.fs-xs または
                     | 「系統1・東登美ヶ丘1丁目行き」
               li.d-flex.align-items-start.pb-3.border-bottom
                 i.ai-map-pin.fs-lg.mt-2.mb-0.text-primary
                 .ps-3
-                  span.fs-ms.text-muted 下車
+                  span.fs-ms 下車
                   .d-block.fs-sm 「東登美ヶ丘1丁目西口」(所要時間約8分)
       .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.h-100.border-0.shadow.mx-auto
+        .card.h-100.mx-auto
           .card-body
             h5.card-title 近鉄京都線 高の原駅
-            p.card-text.fs-sm.text-muted 奈良交通 「1番のりば」
+            p.card-text.fs-sm 奈良交通 「1番のりば」
             ul.list-unstyled.mb-0
               li.d-flex.align-items-start.pb-3.border-bottom
                 i.ai-map-pin.fs-lg.mt-2.mb-0.text-primary
                 .ps-3
-                  span.fs-ms.text-muted 乗車
+                  span.fs-ms 乗車
                   .d-block.fs-sm 「系統11・学園前駅行き」
               li.d-flex.align-items-start.pb-3.border-bottom
                 i.ai-map-pin.fs-lg.mt-2.mb-0.text-primary
                 .ps-3
-                  span.fs-ms.text-muted 下車
+                  span.fs-ms 下車
                   .d-block.fs-sm 「東登美ヶ丘1丁目西口」(所要時間約14分)
       .col-lg-4.col-sm-6.mb-grid-gutter
-        .card.h-100.border-0.shadow.mx-auto
+        .card.h-100.mx-auto
           .card-body
             h5.card-title 参考サイト
-            p.card-text.fs-sm.text-muted 奈良交通とNAVITIME
+            p.card-text.fs-sm 奈良交通とNAVITIME
             ul.list-unstyled.mb-0
               li.d-flex.align-items-start.pb-3.border-bottom
                 i.ai-map-pin.fs-lg.mt-2.mb-0.text-primary
                 .ps-3
-                  span.fs-ms.text-muted 奈良交通：路線バス、時刻表について調べたい時に
-                  a(href='http://www.narakotsu.co.jp/' target='blank').d-block.nav-link-style.fs-sm 奈良交通
+                  span.fs-ms 路線バス、時刻表について調べたい時に
+                  a(href='http://www.narakotsu.co.jp/' target='blank').fancy-link.fs-sm 奈良交通
               li.d-flex.align-items-start.pb-3.border-bottom
                 i.ai-map-pin.fs-lg.mt-2.mb-0.text-primary
                 .ps-3
-                  span.fs-ms.text-muted 乗り換えや所要時間など調べたい時に便利
-                  a(href='https://www.navitime.co.jp/bus/' target='blank').d-block.nav-link-style.fs-sm NAVITIME
+                  span.fs-ms 乗り換えや所要時間など調べたい時に便利
+                  a(href='https://www.navitime.co.jp/bus/' target='blank').fancy-link.fs-sm NAVITIME
 
   // Contact cards (offices)
   section.container.mb-5.mb-md-6
-    h2.text-center.mb-4.pb-4 お車でお越しの場合
+    h3.h2.text-center.mb-4.pb-4 お車でお越しの場合
     .row
       .col-lg-8.col-sm-6.mx-auto.mb-grid-gutter
-        .card.h-100.border-0.shadow.mx-auto
+        .card.h-100.mx-auto
           .card-body
             h5.card-title 第二阪奈有料道路からは「中町」が便利です
             p.card-text.fs-sm 京奈和自動車道からは「精華学研」が最寄りです。ならやま大通りの「石窯パンキャパトル」がある交差点を南へ曲がってください。住宅街へ入る道なので交差点名がありません。 「東登美ヶ丘1丁目西」の信号から、東へ２つ目の信号になります。当センターの詳しい場所はご予約の際にご案内させていただきます。

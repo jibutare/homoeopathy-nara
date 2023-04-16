@@ -2,11 +2,11 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>淺田ゆみ | ホメオパスプロフィル</title>
+    <title>奈良の小さな相談室 ヒノ香 | ホメオパスプロフィル</title>
     <!-- SEO Meta Tags-->
-    <meta name="description" content="Around - Multipurpose Bootstrap Template">
-    <meta name="keywords" content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
-    <meta name="author" content="Createx Studio">
+    <meta name="description" content=" 心・体・魂の成長とよろこびの種、変容の触媒としてのホメオパシーとフラワーエッセンスあなたの人生の内なる旅路をサポートします">
+    <meta name="keywords" content="ホメオパシー, フラワーエッセンス, 自然療法, セッション, 健康相談, インナーチャイルドセラピスト, バッチフラワーレメディー">
+    <meta name="author" content="HINOKA">
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
@@ -114,31 +114,99 @@
       </div>
     </div>
     <main class="page-wrapper">
-      <!-- Navbar (Solid background + shadow)-->
-      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
-      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
-        <div class="navbar-search bg-light">
-          <div class="container d-flex flex-nowrap align-items-center"><i class="ai-search fs-xl"></i>
-            <input class="form-control form-control-xl navbar-search-field" type="text" placeholder="Search site">
-            <div class="d-flex align-items-center"><span class="text-muted fs-xs mt-1 d-none d-sm-inline">Close</span>
-              <button class="btn-close p-2" type="button" data-bs-toggle="search"></button>
+      <!-- Sign In Modal-->
+      <div class="modal fade" id="modal-signin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <div class="view show" id="modal-signin-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign in</h4>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close "></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">Sign in to your account using email and password provided during registration.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <div class="input-group"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                      <input class="form-control rounded" type="email" placeholder="Email" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group"><i class="ai-lock position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                      <div class="password-toggle w-100">
+                        <input class="form-control" type="password" placeholder="Password" required>
+                        <label class="password-toggle-btn" aria-label="Show/hide password">
+                          <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-3 mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="keep-signed">
+                      <label class="form-check-label fs-sm" for="keep-signed">Keep me signed in</label>
+                    </div><a class="nav-link-style fs-ms" href="password-recovery.html">Forgot password?</a>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">Sign in</button>
+                  <p class="fs-sm pt-3 mb-0">Don't have an account? <a href='#' class='fw-medium' data-view='#modal-signup-view'>Sign up</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="view" id="modal-signup-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign up</h4>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close"></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">Registration takes less than a minute but gives you full control over your orders.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Full name" required>
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Email" required>
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input class="form-control" type="password" placeholder="Password" required>
+                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                      <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input class="form-control" type="password" placeholder="Confirm password" required>
+                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                      <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">Sign up</button>
+                  <p class="fs-sm pt-3 mb-0">Already have an account? <a href='#' class='fw-medium' data-view='#modal-signin-view'>Sign in</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="modal-body text-center px-4 pt-2 pb-4">
+              <hr class="my-0">
+              <p class="fs-sm fw-medium text-heading pt-4">Or sign in with</p><a class="btn-social bs-facebook bs-lg mx-1 mb-2" href="#"><i class="ai-facebook"></i></a><a class="btn-social bs-twitter bs-lg mx-1 mb-2" href="#"><i class="ai-twitter"></i></a><a class="btn-social bs-instagram bs-lg mx-1 mb-2" href="#"><i class="ai-instagram"></i></a><a class="btn-social bs-google bs-lg mx-1 mb-2" href="#"><i class="ai-google"></i></a>
             </div>
           </div>
         </div>
+      </div>
+      <!-- Navbar (Solid background)-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header data-fixed-element>
         <div class="container px-0 px-xl-3">
-          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html"><img class="d-none d-lg-block" src="img/logo/logo-dark.png" alt="hinoka" width="153"><img class="d-lg-none" src="img/logo/logo-icon.png" alt="hinoka" width="58"></a>
-          <div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a><a class="btn btn-sm btn-primary d-lg-none d-inline-block" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a></div>
+          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4 fs-6 text-warning f-wanpakurera" href="index.html">日本ホメオパシーセンター奈良 学園前</a>
+          <div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a></div>
           <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
             <div class="offcanvas-header navbar-shadow">
-              <h6 class="mt-1 mb-0"><small>日本ホメオパシーセンター奈良 学園前</small></h6>
+              <fs-4 class="mt-1 mb-0 text-warning f-wanpakurera">ヒノ香</fs-4>
               <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <!-- Menu-->
               <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="/homoeopathy.html">ホメオパシー</a></li>
-                <li class="nav-item"><a class="nav-link" href="/talk-about-your-health.html">健康相談会</a></li>
-                <li class="nav-item"><a class="nav-link" href="/time-fee.html">相談料</a></li>
+                <li class="nav-item"><a class="nav-link" href="/session.html">セッション</a></li>
+                <li class="nav-item"><a class="nav-link" href="/time-fee.html">料金</a></li>
                 <li class="nav-item active"><a class="nav-link" href="/homoeopathy-profile.html">ホメオパスプロフィル</a></li>
                 <li class="nav-item"><a class="nav-link" href="/open.html">ご予約・アクセス</a></li>
               </ul>
@@ -152,28 +220,58 @@
       <section class="container mb-3 my-md-0 py-5 py-md-6">
         <div class="row align-items-center">
           <div class="col-lg-4 col-md-5 order-md-1 order-2 text-md-start text-center">
-            <h1 class="display-4 mb-lg-4 mb-3">ホメオパス<br>プロフィル</h1>
-            <h2 class="h3 mb-lg-5 mb-4 text-muted">淺田ゆみ</h2>
+            <h1 class="display-4 mb-lg-4 mb-3">ごあいさつ</h1>
+            <h2 class="fs-6 mb-lg-5 mb-4 text-muted">ヒノ香・ホメオパスプロフィル</h2>
           </div>
           <div class="col-lg-8 col-md-7 order-md-2 order-1 mb-md-0 mb-grid-gutter"><img class="rounded-3" src="/img/user/homeopathy/DSC_0015.jpg" alt="淺田ゆみ"></div>
         </div>
       </section>
-      <!-- Services-->
-      <section class="bg-faded-primary position-relative py-md-7 py-5">
+      <!-- About-->
+      <section class="container py-5 py-md-6">
+        <div class="row align-items-center">
+          <div class="col-md-5 mb-md-0 mb-grid-gutter"><img class="rounded-3" src="img/user/homeopathy/profile.jpg" alt="あさだゆみ"></div>
+          <div class="col-lg-6 offset-lg-1 col-md-7">
+            <h2 class="mb-2">ヒノ香という屋号</h2>
+            <p class="mb-4 pb-2">ヒノ香の「ヒ」は「火」。火はすなわち日・太陽です。そしてもう１つのヒは「霊」です。火は光、あたたかさ。精妙なものと粗雑なものを分離する力。霊、それはもっとも根源となるもの。香、かおりは目に見えないもの。ホメオパシーもフラワーエッセンスも、目に見えないエネルギー的な領域への療法なのでこのようにしました。中医学の食養生では、なつめのことを脾の果と呼ぶそうでおんなじ。音も可愛くて氣にいりました。</p><a class="btn btn-sm btn-primary me-3" href="https://ameblo.jp/essence-yumi/" target="blank"><i class="ai-edit-2 mt-n1 me-2"></i>ブログ</a><a class="btn btn-sm btn-outline-primary" href="https://note.com/yumi_asada/" target="blank"><i class="ai-edit-2 mt-n1 me-2"></i>note</a>
+          </div>
+        </div>
+      </section>
+      <!-- Profie-->
+      <section class="bg-faded-primary position-relative py-5 py-md-6">
         <div class="container my-2 my-md-0">
           <div class="row align-items-center">
-            <div class="col-12 col-md-8 mx-auto mb-md-0 mb-5 pb-md-0 pb-3">
+            <div class="col-12 col-md-8 mx-auto">
               <!-- Horizontal card layout-->
-              <div class="card card-horizontal">
-                <div class="card-img-top" style="background-image: url(img/user/homeopathy/profile.jpg);"></div>
+              <div class="card border-warning my-5 my-md-6">
+                <div class="card-header border-warning">淺田ゆみ</div>
                 <div class="card-body">
-                  <h5 class="card-title">淺田ゆみ</h5>
-                  <ul class="card-text fs-sm my-5">
-                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-success fs-xl mt-1 me-3"></i><span>JPHMA認定ホメオパス No.0910</span></li>
-                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-success fs-xl mt-1 me-3"></i><span>JPHFインナーチャイルドセラピスト認定 No.118</span></li>
-                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-success fs-xl mt-1 me-3"></i><span>JPHMA認定ホメオパス, JPHFインナーチャイルドセラピスト, 正看護師, 養護教諭一種免許状(保健室の先生)</span></li>
-                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-success fs-xl mt-1 me-3"></i><span>フラワーエッセンス研究家の東昭史氏のもとで勉強中</span></li>
-                  </ul><a class="btn btn-sm btn-primary me-3" href="https://ameblo.jp/essence-yumi/" target="blank"><i class="ai-edit-2 mt-n1 me-2"></i>ブログ</a><a class="btn btn-sm btn-outline-primary" href="https://note.com/yumi_asada/" target="blank"><i class="ai-edit-2 mt-n1 me-2"></i>note</a>
+                  <h4 class="fs-6 card-title">資格</h4>
+                  <ul class="card-text fs-sm">
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>JPHMA認定ホメオパス No.0910</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>JPHFインナーチャイルドセラピスト No.118</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>正看護師免許</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>養護教諭一種免許状</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>アースハーバリスト(川口拓アースハーバリスト1期生)</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>帝王學STRコミュニケーションオフィサー</span></li>
+                  </ul>
+                  <h4 class="fs-6 card-title">学び</h4>
+                  <ul class="card-text fs-sm">
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>バッチフラワーレメディー</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>ファー・イースト・フラワー・エッセンス(東昭史先生)</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>健康学習(石川雄一先生)</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>自然療法家コース3期生(片桐航先生)</span></li>
+                  </ul>
+                  <h4 class="fs-6 card-title">好きなモノこと</h4>
+                  <ul class="card-text fs-sm">
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>焚き火</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>植物</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>朝</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>山のほう</span></li>
+                  </ul>
+                  <h4 class="fs-6 card-title">その他</h4>
+                  <ul class="card-text fs-sm">
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>大型自動二輪免許</span></li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -185,16 +283,9 @@
           </svg>
         </div>
       </section>
-      <!-- Blog-->
-      <div class="position-relative bg-gradient" style="height: 420px;">
-        <div class="shape shape-bottom shape-curve bg-secondary">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
-            <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
-          </svg>
-        </div>
-      </div>
-      <section class="container position-relative zindex-5 pt-5 pt-md-6" style="margin-top: -420px;">
-        <h2 class="text-light text-center pt-3 pt-md-2 mb-5">リンク</h2>
+      <!-- Link-->
+      <section class="container py-5 py-md-6">
+        <h2 class="text-center mb-5">リンク</h2>
         <div class="tns-carousel-wrapper">
           <div class="tns-carousel-inner" data-carousel-options="{&quot;items&quot;: 2, &quot;controls&quot;: false, &quot;autoHeight&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1, &quot;gutter&quot;: 16},&quot;500&quot;:{&quot;items&quot;:2, &quot;gutter&quot;: 16},&quot;850&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 16}, &quot;1100&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 23}}}">
             <!-- Article-->
@@ -224,14 +315,13 @@
           </div>
         </div>
       </section>
-      <div class="bg-secondary" style="margin-top: -300px; padding-top: 300px;"></div>
       <!-- About-->
       <section class="overflow-hidden">
-        <div class="container py-lg-7 py-md-6 py-5 my-2 my-md-0">
+        <div class="container py-5 py-md-6 my-2 my-md-0">
           <h2 class="mb-3 text-center">あの頃の私を助けてあげたい</h2>
           <div class="row justify-content-center">
             <!-- Content-->
-            <div class="col-lg-6 py-4 mb-2 mb-sm-0 pb-sm-5">
+            <div class="col-lg-6">
               <div class="pb-4" style="max-width: 38rem;">
                 <p>目には見えないけれど、<br>あなたの内にある生命力は、本来はイキイキと流れています。<br>生命エネルギーの流れが滞ると元気がなくなり、病気になります。<br>じゃあどうしたらいいのでしょうか？<br>自然の力を借りて、バランスを取り戻してみませんか？</p>
                 <blockquote class="blockquote mx-5 my-5">ホメオパシー と フラワーエッセンスで</blockquote>
@@ -246,12 +336,16 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6 col-md-7 mx-auto">
-              <p>こんにちは。ホメオパスの淺田ゆみ（あさだ ゆみ）です。<br>体や心のことで、お困りのことはありませんか。</p>
-              <p>私がなぜホメオパスになったのかと言いますと…</p>
-              <p>私は28歳の時にうつになりました。何の疑問も持たずに西洋医学の病院に通って、薬を飲んでいました。でも元気になりませんでした。<br>(ちなみに私のうつは次のような症状でした。眠れない、食欲がない、体がだるくしんどい。駅の階段もしんどい。喜びと興味がなくなった。いつも気持ちが重くて悲しい。死にたくなる。朝、目が覚めた瞬間から悲しみに覆われている。生理のたびに動けなくなり寝込む。普通の日常生活ができず辛い。このような状態でも仕事をしていたので、どんどんエネルギーが枯渇し、疲れ果てていく一方でした。)</p>
-              <p>私が苦しんでいるのを知った叔母が、ホメオパシーを教えてくれました。これが私とホメオパシーとの出会いです。藁をもすがる思いですぐにホメオパスさんの元を訪ね、半信半疑でレメディーを摂り始めてから、好転反応の皮膚湿疹が出たのが3日後。驚きました。それから少しずつ薬が減ってゆき、断薬もできました。</p>
-              <p>実はホメオパスになる以前の職業は養護教諭でした。幼稚園や小学校の保健室で学校保健の仕事に携わり19年間勤務した経験があります。うつをきっかけとしてホメオパシーに出会い、価値観が変わり、生き方が変わり、私を取り巻く世界が大きく変わりました。苦しい好転反応を乗り越えながら「自分を知る」歩みを続けているうちに、以前の私とは見違えるような私になりました。苦しかった経験も含めて、今ではまるごと愛おしく感謝の気持ちで自分の人生を眺めています。</p>
-              <p>私は今、毎日を豊かに味わっています。こんなに喜びや幸せを感じられるなんて思ってもみませんでした。自分を取り戻させてくれた「ホメオパシー」と「フラワーエッセンス」が大好きです。だからこの療法を、必要としている人へ届けたい。ホリスティックなケアは様々な方法がありますから、「ホメオパシー」と「フラワーエッセンス」があなたの選択肢の一つになったらいいなあと思っています。生きづらさも、病気も、感情に振り回される時も、答えはあなたの中にあります。私は、あなたが、あなたらしく生きるためのお手伝いをします。</p>
+              <p>あさだゆみと申します。石川県生まれ、2022年3月で52歳になりました。私は幼い頃から生きるのが難しく不器用な子どもでした。辛かった時期が長かったけれど、全ての体験が私に必要であったと思えます。今は、生きることをよろこび、感謝できることをうれしく思います。</p>
+              <p>20代でうつになりました。7年間も精神科の薬を飲んでいたのです。体もしんどくて、心も疲れ果て、自分らしさを失って廃人のようだった35歳のとき、叔母の友人の勧めでホメオパシーと出会いました。もう人生を諦めていたのに、みるみる元気を取り戻して世界はガラリと変わりました。生き方が楽になり、感じ方が深くなりました。</p>
+              <p>今まで自分を抑えこんでいたことがわかりました。</p>
+              <p>人生がふたたび流れ出しました。私の心身の健康を取り戻してくれた不思議なホメオパシーを知りたいと強く願い、当時は公務員で小学校の保健室の仕事をしていましたが、19年の勤務に終止符を打ち退職。ホメオパシーの学校に入り4年間学びました。それからフラワーエッセンスに出会い夢中になります。</p>
+              <p>今は、ホメオパシーとフラワーエッセンスの個人セッションを行っています。</p>
+              <p>セッションを通して、あなたが自分を知り、自分らしく、健康で幸せに今を生きることサポートさせていただいています。</p>私は手助けをするにすぎません。答えはあなたの中にあり、それを引き出してくれるのはレメディーでありフラワーエッセンスです。答えはすべてあなたの中にあります。
+              <p>ホメオパシーのレメディーとフラワーエッセンスとあなたの共振共鳴によって氣づくのです。</p>
+              <p>地球のリズム、わたしの中庸</p>
+              <p>わくわく自分らしくすべてはめぐる</p>
+              <p class="text-end">ヒノ香・日本ホメオパシーセンター奈良学園前 淺田ゆみ</p>
             </div>
           </div>
         </div>
@@ -262,7 +356,7 @@
         </div>
       </section>
       <!-- Socials-->
-      <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);">
+      <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden py-7 my-5" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);">
         <!-- Parallax-->
         <div class="parallax">
           <div class="parallax-layer" data-depth="0.1"><img src="img/demo/personal-portfolio/socials/figure-1.png" alt="Layer 1"></div>
@@ -272,8 +366,9 @@
         <!-- Content-->
         <div class="d-flex align-items-center position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 9">
           <div class="container">
-            <h2 class="mb-4 pb-sm-3 text-center">Follow me</h2>
-            <div class="text-center"><a class="btn btn-lg text-white mb-2 me-sm-4 me-2" href="https://www.instagram.com/wildflowers_yumi/" style="background-color: #667302;"><i class="ai-instagram lead me-2"></i>Instagram</a></div>
+            <h2 class="mb-4 pb-sm-3 text-center">ヒノ香のSNS</h2>
+            <p class="text-center">内容にこだわらず、日々の暮らしや好きなことを写真と言葉で綴っています。<br>更新はかなりゆっくりめですがのぞいていただけるとうれしいです。</p>
+            <div class="text-center"><a class="btn btn-lg btn-warning text-white mb-2 me-sm-4 me-2" href="https://www.instagram.com/wildflowers_yumi/"><i class="ai-instagram lead me-2"></i>Instagram</a></div>
           </div>
         </div>
       </section>
@@ -293,6 +388,5 @@
     <script src="vendor/parallax-js/dist/parallax.min.js"></script>
     <!-- Main theme script-->
     <script src="js/theme.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
   </body>
 </html>

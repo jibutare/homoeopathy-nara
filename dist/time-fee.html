@@ -2,11 +2,11 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>淺田ゆみ | 相談料</title>
+    <title>奈良の小さな相談室 ヒノ香 | 相談料</title>
     <!-- SEO Meta Tags-->
-    <meta name="description" content="Around - Multipurpose Bootstrap Template">
-    <meta name="keywords" content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
-    <meta name="author" content="Createx Studio">
+    <meta name="description" content=" 心・体・魂の成長とよろこびの種、変容の触媒としてのホメオパシーとフラワーエッセンスあなたの人生の内なる旅路をサポートします">
+    <meta name="keywords" content="ホメオパシー, フラワーエッセンス, 自然療法, セッション, 健康相談, インナーチャイルドセラピスト, バッチフラワーレメディー">
+    <meta name="author" content="HINOKA">
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon and Touch Icons-->
@@ -114,31 +114,99 @@
       </div>
     </div>
     <main class="page-wrapper">
-      <!-- Navbar (Solid background + shadow)-->
-      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
-      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
-        <div class="navbar-search bg-light">
-          <div class="container d-flex flex-nowrap align-items-center"><i class="ai-search fs-xl"></i>
-            <input class="form-control form-control-xl navbar-search-field" type="text" placeholder="Search site">
-            <div class="d-flex align-items-center"><span class="text-muted fs-xs mt-1 d-none d-sm-inline">Close</span>
-              <button class="btn-close p-2" type="button" data-bs-toggle="search"></button>
+      <!-- Sign In Modal-->
+      <div class="modal fade" id="modal-signin" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content border-0">
+            <div class="view show" id="modal-signin-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign in</h4>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close "></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">Sign in to your account using email and password provided during registration.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <div class="input-group"><i class="ai-mail position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                      <input class="form-control rounded" type="email" placeholder="Email" required>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <div class="input-group"><i class="ai-lock position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                      <div class="password-toggle w-100">
+                        <input class="form-control" type="password" placeholder="Password" required>
+                        <label class="password-toggle-btn" aria-label="Show/hide password">
+                          <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-3 mb-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="keep-signed">
+                      <label class="form-check-label fs-sm" for="keep-signed">Keep me signed in</label>
+                    </div><a class="nav-link-style fs-ms" href="password-recovery.html">Forgot password?</a>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">Sign in</button>
+                  <p class="fs-sm pt-3 mb-0">Don't have an account? <a href='#' class='fw-medium' data-view='#modal-signup-view'>Sign up</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="view" id="modal-signup-view">
+              <div class="modal-header border-0 bg-dark px-4">
+                <h4 class="modal-title text-light">Sign up</h4>
+                <button class="btn-close btn-close-white" type="button" data-bs-dismiss="modal" aria-label="btn-close"></button>
+              </div>
+              <div class="modal-body px-4">
+                <p class="fs-ms text-muted">Registration takes less than a minute but gives you full control over your orders.</p>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Full name" required>
+                  </div>
+                  <div class="mb-3">
+                    <input class="form-control" type="text" placeholder="Email" required>
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input class="form-control" type="password" placeholder="Password" required>
+                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                      <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <div class="mb-3 password-toggle">
+                    <input class="form-control" type="password" placeholder="Confirm password" required>
+                    <label class="password-toggle-btn" aria-label="Show/hide password">
+                      <input class="password-toggle-check" type="checkbox"><span class="password-toggle-indicator"></span>
+                    </label>
+                  </div>
+                  <button class="btn btn-primary d-block w-100" type="submit">Sign up</button>
+                  <p class="fs-sm pt-3 mb-0">Already have an account? <a href='#' class='fw-medium' data-view='#modal-signin-view'>Sign in</a></p>
+                </form>
+              </div>
+            </div>
+            <div class="modal-body text-center px-4 pt-2 pb-4">
+              <hr class="my-0">
+              <p class="fs-sm fw-medium text-heading pt-4">Or sign in with</p><a class="btn-social bs-facebook bs-lg mx-1 mb-2" href="#"><i class="ai-facebook"></i></a><a class="btn-social bs-twitter bs-lg mx-1 mb-2" href="#"><i class="ai-twitter"></i></a><a class="btn-social bs-instagram bs-lg mx-1 mb-2" href="#"><i class="ai-instagram"></i></a><a class="btn-social bs-google bs-lg mx-1 mb-2" href="#"><i class="ai-google"></i></a>
             </div>
           </div>
         </div>
+      </div>
+      <!-- Navbar (Solid background)-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header data-fixed-element>
         <div class="container px-0 px-xl-3">
-          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html"><img class="d-none d-lg-block" src="img/logo/logo-dark.png" alt="hinoka" width="153"><img class="d-lg-none" src="img/logo/logo-icon.png" alt="hinoka" width="58"></a>
-          <div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a><a class="btn btn-sm btn-primary d-lg-none d-inline-block" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a></div>
+          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4 fs-6 text-warning f-wanpakurera" href="index.html">日本ホメオパシーセンター奈良 学園前</a>
+          <div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="https://ameblo.jp/essence-yumi/" target="_blank">ご予約のスケジュール</a></div>
           <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
             <div class="offcanvas-header navbar-shadow">
-              <h6 class="mt-1 mb-0"><small>日本ホメオパシーセンター奈良 学園前</small></h6>
+              <fs-4 class="mt-1 mb-0 text-warning f-wanpakurera">ヒノ香</fs-4>
               <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
               <!-- Menu-->
               <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="/homoeopathy.html">ホメオパシー</a></li>
-                <li class="nav-item"><a class="nav-link" href="/talk-about-your-health.html">健康相談会</a></li>
-                <li class="nav-item active"><a class="nav-link" href="/time-fee.html">相談料</a></li>
+                <li class="nav-item"><a class="nav-link" href="/session.html">セッション</a></li>
+                <li class="nav-item active"><a class="nav-link" href="/time-fee.html">料金</a></li>
                 <li class="nav-item"><a class="nav-link" href="/homoeopathy-profile.html">ホメオパスプロフィル</a></li>
                 <li class="nav-item"><a class="nav-link" href="/open.html">ご予約・アクセス</a></li>
               </ul>
@@ -152,8 +220,8 @@
       <section class="container mb-3 my-md-0 py-5 py-md-6">
         <div class="row align-items-center">
           <div class="col-lg-4 col-md-5 order-md-1 order-2 text-md-start text-center">
-            <h1 class="display-4 mb-lg-4 mb-3">相談料</h1>
-            <h2 class="h3 mb-lg-5 mb-4 text-muted">大人と子供にわかれています</h2>
+            <h1 class="display-4 mb-lg-4 mb-3">料金</h1>
+            <h2 class="fs-6 mb-lg-5 mb-4 text-muted">セッションのメニューと料金</h2>
             <div class="text-nowrap"><a class="btn btn-outline-primary" href="https://ameblo.jp/essence-yumi/" target="blank"><i class="ai-calendar mt-n1 me-2"></i>最新のご予約スケジュールのご案内</a></div>
           </div>
           <div class="col-lg-8 col-md-7 order-md-2 order-1 mb-md-0 mb-grid-gutter"><!-- lottie-player(src='https://assets7.lottiefiles.com/private_files/lf30_O4WDjy.json'  background='transparent'  speed='0.8' loop autoplay).w-100.h-100 --><img class="rounded-3" src="img/user/homeopathy/photo_02.jpg" alt="ホメオパシー"></div>
@@ -161,50 +229,30 @@
       </section>
       <!-- Pricing-->
       <section class="container mb-3 mt-4 py-5 my-md-0 pt-md-7 pb-md-6">
-        <h2 class="text-center mb-5">大人</h2>
-        <div class="d-flex align-items-center justify-content-center border rounded mx-auto mb-5 py-3 px-5" style="max-width: 375px;"><i class="ai-arrow-up lead text-primary p-2"></i>
-          <h5 class="p-2 mb-0">12歳以上</h5>
-        </div>
+        <h2 class="text-center mb-5"><i class="ai-arrow-up lead text-primary p-2"></i>12歳以上</h2>
         <div class="row">
-          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
+          <div class="col-lg-6 col-sm-6 mb-grid-gutter">
             <div class="card border-0 shadow w-100">
-              <div class="card-img-top bg-secondary text-center py-5 px-grid-gutter">
-                <h3 class="text-body mb-0">健康相談会</h3>
+              <div class="card-img-top bg-warning text-center py-5 px-grid-gutter">
+                <h3 class="text-light mb-0">ヒノ香のセッション</h3>
               </div>
               <div class="card-body px-grid-gutter py-grid-gutter">
-                <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">17,500</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
+                <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">15,400</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
                 <ul class="list-unstyled py-2 mb-4">
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>80分/1回</span></li>
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。</span></li>
+                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>ホメオパシーとフラワーエッセンス</span></li>
                 </ul>
-                <div class="text-center mb-2"><a class="btn btn-outline-primary" href="https://ameblo.jp/essence-yumi/entry-12374976434.html" target="blank">初めて受けるとき</a></div>
+                <!-- はじめて受けるとき-->
+                <div class="text-center mb-2"><a class="btn btn-outline-warning" href="https://ameblo.jp/essence-yumi/entry-12374976434.html" target="blank">初めて受けるとき</a></div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
+          <div class="col-lg-6 col-sm-6 mb-grid-gutter">
             <div class="card border-0 shadow w-100">
-              <div class="card-img-top bg-secondary text-center py-5 px-grid-gutter">
-                <h3 class="text-body mb-0">ホメオパシーのみ</h3>
+              <div class="card-img-top bg-warning text-center py-5 px-grid-gutter">
+                <h3 class="text-light mb-0">ホメオパシー&nbsp;<span class="fs-5">または</span>フラワーエッセンス&nbsp;<span class="fs-5">のみ</span></h3>
               </div>
               <div class="card-body px-grid-gutter py-grid-gutter">
                 <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">11,000</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
-                <ul class="list-unstyled py-2 mb-4">
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>60分/1回</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card border-0 shadow w-100">
-              <div class="card-img-top bg-secondary text-center py-5 px-grid-gutter">
-                <h3 class="text-body mb-0">フラワーエッセンスのみ</h3>
-              </div>
-              <div class="card-body px-grid-gutter py-grid-gutter">
-                <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">12,000</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
-                <ul class="list-unstyled py-2 mb-4">
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>60分/1回</span></li>
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。</span></li>
-                </ul>
               </div>
             </div>
           </div>
@@ -212,49 +260,54 @@
       </section>
       <!-- Pricing-->
       <section class="container mb-3 mt-4 py-5 my-md-0 pt-md-7 pb-md-6">
-        <h2 class="text-center mb-5">子供</h2>
-        <div class="d-flex align-items-center justify-content-center border rounded mx-auto mb-5 py-3 px-5" style="max-width: 375px;"><i class="ai-arrow-down lead text-primary p-2"></i>
-          <h5 class="p-2 mb-0">11歳以下</h5>
-        </div>
+        <h2 class="text-center mb-5"><i class="ai-arrow-down lead text-primary p-2"></i>11歳以下のお子さま</h2>
         <div class="row">
           <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card border-0 shadow w-100">
-              <div class="card-img-top bg-secondary text-center py-5 px-grid-gutter">
-                <h3 class="text-body mb-0">こども健康相談会</h3>
+            <div class="card w-100">
+              <div class="card-img-top bg-faded-danger text-center py-5 px-grid-gutter">
+                <h3 class="fs-5 text-body mb-0"> ホメオパシーとフラワーエッセンス</h3>
               </div>
               <div class="card-body px-grid-gutter py-grid-gutter">
-                <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">12,000</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
-                <ul class="list-unstyled py-2 mb-4">
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>80分/1回</span></li>
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。</span></li>
-                </ul>
+                <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">11,000</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card border-0 shadow w-100">
-              <div class="card-img-top bg-secondary text-center py-5 px-grid-gutter">
-                <h3 class="text-body mb-0">ホメオパシーのみ</h3>
+            <div class="card w-100">
+              <div class="card-img-top bg-faded-danger text-center py-5 px-grid-gutter">
+                <h3 class="fs-5 text-body mb-0">ホメオパシーこども健康相談会</h3>
               </div>
               <div class="card-body px-grid-gutter py-grid-gutter">
                 <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">8,800</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
-                <ul class="list-unstyled py-2 mb-4">
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>60分/1回</span></li>
-                </ul>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-sm-6 mb-grid-gutter">
-            <div class="card border-0 shadow w-100">
-              <div class="card-img-top bg-secondary text-center py-5 px-grid-gutter">
-                <h3 class="text-body mb-0">フラワーエッセンスのみ</h3>
+            <div class="card w-100">
+              <div class="card-img-top bg-faded-danger text-center py-5 px-grid-gutter">
+                <h3 class="fs-5 text-body mb-0">フラワーエッセンスのみ</h3>
               </div>
               <div class="card-body px-grid-gutter py-grid-gutter">
-                <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">9,800</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
-                <ul class="list-unstyled py-2 mb-4">
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>60分/1回</span></li>
-                  <li class="d-flex align-items-center mb-3"><i class="ai-check fs-xl text-primary me-2"></i><span>対面の場合、上記の料金から発送にかかる事務手数料1,000円を引いた金額となります。</span></li>
-                </ul>
+                <div class="d-flex align-items-end py-2 px-4 mb-4"><span class="h2 fw-normal text-muted mb-1 me-2">¥</span><span class="price display-2 fw-normal text-primary px-1 me-2">8,800</span><span class="h3 fs-lg fw-medium text-muted mb-2">税込</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 別途費用-->
+      <section class="bg-info py-7">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 mx-auto">
+              <div class="card border-warning">
+                <div class="card-header border-warning">セッション料金のほかに必要な費用</div>
+                <div class="card-body">
+                  <ul class="card-text fs-sm">
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>ホメオパシーのレメディー代金が別途必要です。</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>ヒノ香では販売していませんのでよろしければ代行発注をさせていただき、レメディーショップからのお届けになります。</span></li>
+                    <li class="d-flex mb-2 pb-1"><i class="ai-check-circle text-warning fs-xl mt-1 me-3"></i><span>zoomのフラワーエッセンスセッションの場合、フラワーエッセンスのボトルは発送になるので、送料660円がかかります。</span></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -269,7 +322,7 @@
               <div class="d-block d-xl-flex align-items-center px-lg-3 py-xl-2 text-center text-sm-start"><img class="d-inline-block mb-3 mb-xl-0" src="img/user/homeopathy/IMG_3812.jpg" alt="フラワーエッセンス" width="140">
                 <div class="ps-xl-3 ms-xl-3">
                   <h3 class="h4 text-primary pb-1">フラワーエッセンス</h3>
-                  <p>目に見えない領域のバランスの乱れこそ本当に治療すべきもの</p><a class="nav-link-style" href="https://ameblo.jp/essence-yumi/">Read more<i class="ai-chevron-right fs-xl ms-1 align-middle"></i></a>
+                  <p>目に見えない領域のバランスの乱れこそ本当に治療すべきもの</p><a class="nav-link-style" href="https://ameblo.jp/essence-yumi/">ブログ<i class="ai-chevron-right fs-xl ms-1 align-middle"></i></a>
                 </div>
               </div>
             </div>
@@ -279,7 +332,7 @@
               <div class="d-block d-xl-flex align-items-center px-lg-3 py-xl-2 text-center text-sm-start"><img class="d-inline-block mb-3 mb-xl-0" src="img/user/homeopathy/photo_03.jpg" alt="自然療法" width="140">
                 <div class="ps-xl-3 ms-xl-3">
                   <h3 class="h4 text-primary pb-1">自然療法</h3>
-                  <p>体質分類がありそれぞれの体質に応じた養生がある</p><a class="nav-link-style" href="https://ameblo.jp/essence-yumi/">Read more<i class="ai-chevron-right fs-xl ms-1 align-middle"></i></a>
+                  <p>体質分類がありそれぞれの体質に応じた養生がある</p><a class="nav-link-style" href="https://ameblo.jp/essence-yumi/">ブログ<i class="ai-chevron-right fs-xl ms-1 align-middle"></i></a>
                 </div>
               </div>
             </div>
@@ -287,7 +340,7 @@
         </div>
       </section>
       <!-- Socials-->
-      <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);">
+      <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden py-7 my-5" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);">
         <!-- Parallax-->
         <div class="parallax">
           <div class="parallax-layer" data-depth="0.1"><img src="img/demo/personal-portfolio/socials/figure-1.png" alt="Layer 1"></div>
@@ -297,8 +350,9 @@
         <!-- Content-->
         <div class="d-flex align-items-center position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 9">
           <div class="container">
-            <h2 class="mb-4 pb-sm-3 text-center">Follow me</h2>
-            <div class="text-center"><a class="btn btn-lg text-white mb-2 me-sm-4 me-2" href="https://www.instagram.com/wildflowers_yumi/" style="background-color: #667302;"><i class="ai-instagram lead me-2"></i>Instagram</a></div>
+            <h2 class="mb-4 pb-sm-3 text-center">ヒノ香のSNS</h2>
+            <p class="text-center">内容にこだわらず、日々の暮らしや好きなことを写真と言葉で綴っています。<br>更新はかなりゆっくりめですがのぞいていただけるとうれしいです。</p>
+            <div class="text-center"><a class="btn btn-lg btn-warning text-white mb-2 me-sm-4 me-2" href="https://www.instagram.com/wildflowers_yumi/"><i class="ai-instagram lead me-2"></i>Instagram</a></div>
           </div>
         </div>
       </section>
@@ -318,6 +372,5 @@
     <script src="vendor/parallax-js/dist/parallax.min.js"></script>
     <!-- Main theme script-->
     <script src="js/theme.min.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
   </body>
 </html>

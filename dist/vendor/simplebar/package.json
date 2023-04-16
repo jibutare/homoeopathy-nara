@@ -1,35 +1,38 @@
 {
-  "_from": "simplebar@5.3.4",
-  "_id": "simplebar@5.3.4",
+  "_args": [
+    [
+      "simplebar@5.3.5",
+      "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp"
+    ]
+  ],
+  "_from": "simplebar@5.3.5",
+  "_id": "simplebar@5.3.5",
   "_inBundle": false,
-  "_integrity": "sha512-2mCaVdiroCKmXuD+Qfy+QSE32m5BMuZ4ssHvRD1QEPYH95Re/kox7j/Wy0Hje8Uo7LY7O6JK3XSNJmesGlsP8Q==",
+  "_integrity": "sha512-mcTlXEiva8pSMdNEzeV3C1KyBHk7Sn2Pe46U1Uwo53dCuQqdJIK0bEJrIPs8W4/RqJquKIsC8Y1h7+aqOl8ccA==",
   "_location": "/simplebar",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "simplebar@5.3.4",
+    "raw": "simplebar@5.3.5",
     "name": "simplebar",
     "escapedName": "simplebar",
-    "rawSpec": "5.3.4",
+    "rawSpec": "5.3.5",
     "saveSpec": null,
-    "fetchSpec": "5.3.4"
+    "fetchSpec": "5.3.5"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/simplebar/-/simplebar-5.3.4.tgz",
-  "_shasum": "7de8d4a07ed3c6612644f4dbc04a8427fdf038ef",
-  "_spec": "simplebar@5.3.4",
-  "_where": "/home/masaaki/git/src/github/homoeopathy-nara.jp",
+  "_resolved": "https://registry.npmjs.org/simplebar/-/simplebar-5.3.5.tgz",
+  "_spec": "5.3.5",
+  "_where": "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp",
   "author": {
     "name": "Adrien Denat from a fork by Jonathan Nicol"
   },
   "bugs": {
     "url": "https://github.com/grsmto/simplebar/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "@juggle/resize-observer": "^3.3.1",
     "can-use-dom": "^0.1.0",
@@ -38,7 +41,6 @@
     "lodash.memoize": "^4.1.2",
     "lodash.throttle": "^4.1.1"
   },
-  "deprecated": false,
   "description": "Scrollbars, simpler.",
   "devDependencies": {
     "css-loader": "^0.28.11",
@@ -54,7 +56,7 @@
     "src",
     "README.md"
   ],
-  "gitHead": "fcdf86d2d2a91d4e0ecd420ee10a1d25a6bb8207",
+  "gitHead": "d5a03ef12568134bbb45c76ab02d91fe1f814171",
   "homepage": "https://grsmto.github.io/simplebar/",
   "license": "MIT",
   "lint-staged": {
@@ -84,5 +86,5 @@
   "style": "dist/simplebar.min.css",
   "title": "SimpleBar.js",
   "types": "dist/simplebar.d.ts",
-  "version": "5.3.4"
+  "version": "5.3.5"
 }

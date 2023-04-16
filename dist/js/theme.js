@@ -12,7 +12,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
  * Theme core scripts
  * 
  * @author Createx Studio
- * @version 2.0.0
+ * @version 2.4.0
  */
 (function () {
   'use strict';

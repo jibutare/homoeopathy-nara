@@ -2,7 +2,7 @@
   "_args": [
     [
       "imagesloaded@4.1.4",
-      "/home/masaaki/git/src/github/homoeopathy-nara.jp"
+      "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp"
     ]
   ],
   "_from": "imagesloaded@4.1.4",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/imagesloaded/-/imagesloaded-4.1.4.tgz",
   "_spec": "4.1.4",
-  "_where": "/home/masaaki/git/src/github/homoeopathy-nara.jp",
+  "_where": "/Users/masaaki/dev/src/bitbucket/homoeopathy-nara.jp",
   "author": {
     "name": "David DeSandro"
   },
